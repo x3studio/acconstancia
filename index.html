@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Antonio Carlos Constancia</title>
+<meta charset="utf-8" />
+<meta name="title" content="acconstacia" />
+<meta name="description" content="Página Pessoal de Antonio Carlos Constacia - Web designer, blogger, promoter... "/>
+<meta name="robots" content="index,follow" />
+<meta name="keywords" content="Antonio Carlos Constacia" />
+<link rel="shortcut icon" type="image/x-icon" href="https://www.favicon.cc/logo3d/598489.png" /> 
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Release/Documents/Modelos/form.css">
+<link rel='stylesheet' href='https://rawgit.com/romulomachado/simpletabs/master/dist/simpletabs.css'> 
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- Disable 
+function disableselect(e){ 
+return false 
+} 
+
+function reEnable(){ 
+return true 
+} 
+
+//if IE4+ 
+document.onselectstart=new Function ("return false") 
+document.oncontextmenu=new Function ("return false") 
+//if NS6 
+if (window.sidebar){ 
+document.onmousedown=disableselect 
+document.onclick=reEnable 
+} 
+//--> 
+</script> 
+
+<style>
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PFDinTextCompPro-Medium.ttf);
+  font-family: pfd-medium;
+}
+@font-face {
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PT_Sans-Web-Regular.ttf);
+  font-family: ptsans-regular;
+}
+.content__item {
+  width:100%; height:auto;
+  display: none;
+}
+
+.content__item.is-active {
+  display: block;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.sidebar-hover,
+.sidebar-real,
+.left-part,
+.content,
+.bg-part {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+/* END OF GLOBAL STYLES */
+/* SIDEBAR HOVER STYLES */
+.sidebar-hover {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  width: 15rem;
+}
+.sidebar-hover:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.sidebar-hover:hover ~ .sidebar-real {
+  max-width: 30rem;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem {
+  transform: translateX(0);
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-1 {
+  transition-delay: 0.4s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-2 {
+  transition-delay: 0.55s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-3 {
+  transition-delay: 0.7s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-4 {
+  transition-delay: 0.85s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-5 {
+  transition-delay: 1s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-6 {
+  transition-delay: 1.15s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-7 {
+  transition-delay: 1.3s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-8 {
+  transition-delay: 1.45s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-9 {
+  transition-delay: 1.6s;
+}
+.sidebar-hover:hover ~ .sidebar-real .nav-elem.nav-10 {
+  transition-delay: 1.75s;
+}
+.sidebar-hover:hover ~ .sections .content {
+  transform: translateX(30rem);
+}
+
+.pagination {
+  z-index: 500;
+  position: absolute;
+  font-size: 1.6rem;
+  font-family: ptsans-regular;
+  top: 26.7rem;
+  left: 0rem;
+  width: 15rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  /*
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.2rem;
+    height: 4rem;
+    width: 0.5rem;
+    border-radius: 5px;
+    background: rgba(255,255,255, 0.9);
+  }*/
+}
+.pagination:after {
+  content: ">";
+  color: #fff;
+  position: absolute;
+  display: block;
+  right: 3rem;
+  top: 0.5rem;
+  -webkit-animation: navArrowMove 1s infinite;
+          animation: navArrowMove 1s infinite;
+}
+.pagination .page {
+  color: #fff;
+}
+
+/* END OF SIDEBAR HOVER */
+/* REAL SIDEBAR (OFF-CANVAS MENU) STYLES */
+.sidebar-real {
+  z-index: 200;
+  left: 15rem;
+  width: 30rem;
+  height: 500rem;
+  max-width: 0;
+  background: #000;
+  overflow: hidden;
+  transition: max-width 0.4s 0.2s, transform 0.3s;
+  will-change: max-width, transform;
+}
+.sidebar-real:hover {
+  max-width: 30rem;
+}
+.sidebar-real:hover .nav-elem {
+  transform: translateX(0);
+}
+.sidebar-real:hover .nav-elem.nav-1 {
+  transition-delay: 0.4s;
+}
+.sidebar-real:hover .nav-elem.nav-2 {
+  transition-delay: 0.55s;
+}
+.sidebar-real:hover .nav-elem.nav-3 {
+  transition-delay: 0.7s;
+}
+.sidebar-real:hover .nav-elem.nav-4 {
+  transition-delay: 0.85s;
+}
+.sidebar-real:hover .nav-elem.nav-5 {
+  transition-delay: 1s;
+}
+.sidebar-real:hover .nav-elem.nav-6 {
+  transition-delay: 1.15s;
+}
+.sidebar-real:hover .nav-elem.nav-7 {
+  transition-delay: 1.3s;
+}
+.sidebar-real:hover .nav-elem.nav-8 {
+  transition-delay: 1.45s;
+}
+.sidebar-real:hover .nav-elem.nav-9 {
+  transition-delay: 1.6s;
+}
+.sidebar-real:hover .nav-elem.nav-10 {
+  transition-delay: 1.75s;
+}
+.sidebar-real:hover ~ .sections .content {
+  transform: translateX(30rem);
+}
+
+.nav-elem {
+  position: relative;
+  width: 100%;
+  height: 18.81rem;
+  background-size: cover;
+  transition: transform 0.4s 0.3s;
+  will-change: transform;
+  transform: translateX(-100%);
+  cursor: pointer;
+}
+.nav-elem:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.2s;
+  will-change: background;
+}
+.nav-elem:hover:after {
+  background: transparent;
+}
+.nav-elem.nav-1 {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/2side-pagi-1.jpg");
+}
+.nav-elem.nav-2 {
+  background-image: url("https://cdn-img-feed.streeteasy.com/nyc/image/79/408266479.jpg"); 
+}
+.nav-elem.nav-3 {
+  background-image: url("https://cdn.wallpapersafari.com/87/80/PjsFtn.jpg");
+}
+.nav-elem.nav-4 {
+  background-image: url("https://1.bp.blogspot.com/-kIiNnISLP2o/YBgWNPHJKvI/AAAAAAAAJ3U/7jAavdNpMoAqT50k1gvCgV4vWaUdC-gCACLcBGAsYHQ/s0/32511.jpg");
+}
+.nav-elem.nav-5 {
+  background-image: url("https://wallpaperaccess.com/full/668768.jpg");
+}
+.nav-elem.nav-6 {
+  background-image: url("https://www.10wallpaper.com/wallpaper/1920x1080/1302/hills_in_the_countryside-natural_scenery_widescreen_wallpaper_1920x1080.jpg");
+}
+.nav-elem.nav-7 {
+  background-image: url("https://s1.1zoom.me/big0/642/Germany_Lake_Mountains_Forests_Stones_Scenery_Lake_525086_1280x853.jpg");
+}
+.nav-elem.nav-8 {
+  background-image: url("https://wallpapercave.com/wp/Xy5Nlwl.jpg");
+}
+
+/* REAL SIDEBAR STYLES END */
+/* SECTIONS STYLES */
+.sections {
+  height: 100%;
+  transition: margin 0.5s;
+  will-change: margin;
+}
+
+.section {
+  position: relative;
+  height: 100%;
+}
+.section.section-1 .left-part {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/2side-pagi-1.jpg");
+}
+.section.section-1 .bg-part {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/2side-pagi-1.jpg");
+}
+.section.section-2 .left-part {
+  background-image: url("https://cdn-img-feed.streeteasy.com/nyc/image/79/408266479.jpg");
+}
+.section.section-2 .bg-part {
+  background-image: url("https://cdn-img-feed.streeteasy.com/nyc/image/79/408266479.jpg"); 
+}
+.section.section-3 .left-part {
+  background-image: url("https://cdn.wallpapersafari.com/87/80/PjsFtn.jpg"); background-size:100% 100%;
+}
+.section.section-3 .bg-part {
+  background-image: url("https://cdn.wallpapersafari.com/87/80/PjsFtn.jpg"); background-size:100% 100%;
+}
+.section.section-4 .left-part {
+  background-image: url("https://1.bp.blogspot.com/-kIiNnISLP2o/YBgWNPHJKvI/AAAAAAAAJ3U/7jAavdNpMoAqT50k1gvCgV4vWaUdC-gCACLcBGAsYHQ/s0/32511.jpg");
+}
+.section.section-4 .bg-part {
+  background-image: url("https://1.bp.blogspot.com/-kIiNnISLP2o/YBgWNPHJKvI/AAAAAAAAJ3U/7jAavdNpMoAqT50k1gvCgV4vWaUdC-gCACLcBGAsYHQ/s0/32511.jpg");
+}
+.section.section-5 .left-part {
+  background-image: url("https://wallpaperaccess.com/full/668768.jpg");
+}
+.section.section-5 .bg-part {
+  background-image: url("https://wallpaperaccess.com/full/668768.jpg");
+}
+.section.section-6 .left-part {
+  background-image: url("https://www.10wallpaper.com/wallpaper/1920x1080/1302/hills_in_the_countryside-natural_scenery_widescreen_wallpaper_1920x1080.jpg");
+}
+.section.section-6 .bg-part {
+  background-image: url("https://www.10wallpaper.com/wallpaper/1920x1080/1302/hills_in_the_countryside-natural_scenery_widescreen_wallpaper_1920x1080.jpg");
+}
+.section.section-7 .left-part {
+  background-image: url("https://s1.1zoom.me/big0/642/Germany_Lake_Mountains_Forests_Stones_Scenery_Lake_525086_1280x853.jpg");background-size:100% 100%;
+}
+.section.section-7 .bg-part {
+  background-image: url("https://s1.1zoom.me/big0/642/Germany_Lake_Mountains_Forests_Stones_Scenery_Lake_525086_1280x853.jpg");background-size:100% 100%;
+}
+.section.section-8 .left-part {
+  background-image: url("https://wallpapercave.com/wp/Xy5Nlwl.jpg");background-size:100% 100%;
+}
+.section.section-8 .bg-part {
+  background-image: url("https://wallpapercave.com/wp/Xy5Nlwl.jpg");background-size:100% 100%;
+}
+
+.left-part,
+.bg-part {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  transition: margin 0.8s;
+  will-change: margin;
+}
+
+.left-part {
+  z-index: 20;
+  left: 0;
+  width: 15rem;
+  transition-delay: 1s;
+}
+
+.content {
+  left: 15rem;
+  width: calc(100% - 15rem);
+  height: 100%;
+  transition: transform 0.4s 0.2s;
+  will-change: transform;
+}
+
+.section-heading,
+.additional-text{
+  display: block;
+  position: absolute;
+  z-index: 700;
+  color: #fff;
+  line-height: 1;
+  transition: transform 0.4s, opacity 0.1s, color 0.3s;
+  will-change: transform, opacity;
+}
+.section-heading.not-visible,
+.additional-text.not-visible {
+  transform: translateY(-10rem);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.2s 0.2s;
+}
+
+.section-heading {
+  width:970px;
+  top: 25px;
+  left: 25px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border:1px solid black;
+  font-size: 2rem;
+  max-height:95vh;
+  overflow:auto;
+}
+.section-heading::-webkit-scrollbar {width: 12px;/* width of the entire scrollbar */}
+.section-heading::-webkit-scrollbar-track { background: black;/* color of the tracking area */}
+.section-heading::-webkit-scrollbar-thumb {background-color: #fff;/* color of the scroll thumb */border-radius: 25px;/* roundness of the scroll thumb */border: 2px solid black; border-bottom:15px solid red;  border-top:15px solid #990000; /* creates padding around scroll thumb */}
+
+
+.additional-text {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: ptsans-regular;
+}
+
+.bg-part {
+  width: 12.5%;
+}
+.bg-part:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.bg-part:nth-child(3), .bg-part:nth-child(5) {
+  transition-delay: 0.6s;
+}
+.bg-part:nth-child(2), .bg-part:nth-child(6) {
+  transition-delay: 0.8s;
+}
+.bg-part:nth-child(1), .bg-part:nth-child(7) {
+  transition-delay: 1s;
+}
+.bg-part:nth-child(8) {
+  transition-delay: 1.2s;
+}
+.bg-part:nth-child(1) {
+  left: 0%;
+}
+.bg-part:nth-child(2) {
+  left: 12.5%;
+}
+.bg-part:nth-child(3) {
+  left: 25%;
+}
+.bg-part:nth-child(4) {
+  left: 37.5%;
+}
+.bg-part:nth-child(5) {
+  left: 50%;
+}
+.bg-part:nth-child(6) {
+  left: 62.5%;
+}
+.bg-part:nth-child(7) {
+  left: 75%;
+}
+.bg-part:nth-child(8) {
+  left: 87.5%;
+}
+
+.scroll-down {
+  position: fixed;
+  z-index: 500;
+  transition: transform 0.5s 1.5s, opacity 0.3s 1.7s, z-index 0.5s 1.5s;
+  font-size: 3rem;
+  font-family: ptsans-regular;
+  text-transform: uppercase;
+  bottom: 8rem;
+  left: calc(50% - 15rem);
+  color: #fff;
+  width: 30rem;
+  text-align: center;
+}
+.scroll-down.removed {
+  transform: translateY(-20rem);
+  opacity: 0;
+  z-index: -10;
+  transition: transform 0.5s, opacity 0.3s 0.2s, z-index 0.5s;
+}
+.scroll-down:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -3rem;
+  left: calc(50% - 1.5rem);
+  width: 3rem;
+  height: 3rem;
+  border: 0.5rem solid #fff;
+  border-left: none;
+  border-top: none;
+  transform-origin: 50% 50%;
+  transform: rotate(45deg);
+  -webkit-animation: arrowMove 1.2s infinite;
+          animation: arrowMove 1.2s infinite;
+}
+
+@-webkit-keyframes arrowMove {
+  to {
+    transform: rotate(45deg) translateY(2rem) translateX(2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes arrowMove {
+  to {
+    transform: rotate(45deg) translateY(2rem) translateX(2rem);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes navArrowMove {
+  to {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+}
+@keyframes navArrowMove {
+  to {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+}
+.codepen-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.check-out a {
+  color: #ffaaaa;
+}
+
+
+
+
+/* mainnav styles */
+
+#mainnav {
+	background: CadetBlue;
+	color: #272900;
+	padding: 2px 0;
+	margin-bottom: 5px;
+	}
+
+#mainnav ul {
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style-type: none;
+	border-left: 1px solid #C4C769;
+	}
+
+#mainnav li {
+	display: inline;
+	padding: 0 10px;
+	border-right: 1px solid #C4C769;
+	cursor:pointer;
+	}
+
+#mainnav li a {
+	text-decoration: none;
+	color: #272900;
+	}
+
+#mainnav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	}
+	
+.blogentry {padding-left:20px;}
+
+.blogentry ul {
+	text-align: right;
+	margin: 1em 0;
+	padding: 0;
+	font-size: 95%;
+	}
+
+.blogentry li {
+	list-style-type: none;
+	display: inline;
+	margin: 0;
+	padding: 0 0 0 7px;
+		}
+
+.imagefloat {
+	float: left;
+	border: 1px solid black;
+	margin-right:25px;
+	border-radius:50%; 
+    box-shadow:0 0 10px 2px black;
+	}	
+.imagefloat2 {
+	float: left;
+	border: 1px solid black;
+	margin-right:25px;
+	}	
+a:link { color: #B52C07; }
+a:hover { color: #7d8206; }
+a:active { color: red; }
+h1, h2, h3, h4, h5, h6 { margin: 0 0 .5em; }
+
+h2 {
+	color: black;
+	font: 170% georgia, times, "times new roman", serif;
+	text-shadow: 0px 0px 2px white;
+	}
+/* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+h3 {
+	color: orange;
+	font: 130% georgia, times, "times new roman", serif;
+	 text-shadow: 1px 1px black;
+	}
+p{
+	color: white;
+	font: 20px times new roman, serif;
+	font-family: 'Charm', cursive;
+	text-shadow: 1px 1px black;
+	}
+h6{
+	color: white;
+	font-size: 18px;
+	font-family: "times new roman", serif;
+	text-shadow: 1px 1px black;
+	}	
+		
+h5 {
+  font-size: 4em;
+  margin: 0;
+  font-family: Times New Roman, serif;
+  line-height: 1.3; color:white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px #333;
+  }
+ol{
+	font-size: 13px;
+	font-family: "times new roman", serif;
+	padding:5px;
+	}
+hr{border:5px solid #660000; border-radius:; box-shadow: -1px 0 white, 0 1px white, 1px 0 black, 0 -1px white;}	
+
+
+/* Modal */
+.modal {
+  position: fixed; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: flex-start; /* or center */
+  z-index: 1000; /* depending on what z-index values exist in your page, in order for the modal layer to sit on top of other content */
+  overflow: auto; /* enable scrolling if needed - although this is not really necessary since we are going take care of overflow in modal-content */
+  background-color: rgba(0,0,0,0.8);
+}
+.modal.modal-show {
+  animation: fadeIn 0.1s ease-in-out forwards;
+}
+.modal.modal-hide {
+  animation: fadeOut 0.1s ease-in-out 0.1s forwards;
+}
+.modal-content {
+  position: relative;
+  background-color: black;
+  margin: 5%;
+  border: solid 2px rgba(255, 255, 255, .4);
+  border-radius: 0.25rem;
+  width: 60%;
+  height:750px;
+  max-height: 75%;
+  overflow: auto;
+  border-radius:;
+  overflow: hidden;
+  padding: 15px;
+  }
+ .modal-content:hover {
+  border: solid 2px #fff;
+  box-shadow: 0 0 10px #fff;
+} 
+.modal.modal-show .modal-content {
+  animation: fadeInDown 0.3s ease-in-out forwards;
+}
+.modal.modal-hide .modal-content {
+  animation: fadeOutUp 0.2s ease-in-out forwards;
+}
+.modal-content h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.modal-content p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+}
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2.75rem;
+  font-weight: bold;
+  padding: 0 0.75rem;
+  /* width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  color: red;
+  cursor: pointer;
+  user-select: none;
+}
+.modal-close:hover, .modal-close:focus {
+  color: orange;
+}
+#pop{cursor:pointer;}
+
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window>div {
+  position: relative;
+  background-color: black;
+  margin: 5% auto;
+  border: solid 2px rgba(255, 255, 255, .4);
+  border-radius: 0.25rem;
+  width: 60%;
+  height:750px;
+  max-height: 75%;
+  overflow: auto;
+  border-radius:;
+  overflow: hidden;
+  padding: 15px;
+  }
+ .modal-window>div:hover {
+  border: solid 2px #fff;
+  box-shadow: 0 0 10px #fff;
+} 
+.modal-resenha {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-resenha:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-resenha>div {
+  position: relative;
+  background-color: black;
+  margin: 2% auto;
+  border: solid 2px rgba(255, 255, 255, .4);
+  border-radius: 0.25rem;
+  width: 50%;
+  height:90vh;
+  max-height:;
+  overflow: auto;
+  border-radius:;
+  overflow: hidden;
+  padding: 15px;
+  }
+ .modal-resenha>div:hover {
+  border: solid 2px #fff;
+  box-shadow: 0 0 10px #fff;
+} 
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-close {
+  color: red;
+  line-height: 50px;
+  font-size: 50px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  text-decoration: none;
+  background:white;
+  border:2px solid black;
+  padding:0;
+}
+
+.modal-close:hover {
+  color: #990000;
+  text-decoration: none;
+  background:black;
+  border:2px solid white;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+</style>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body translate="no" >
+  <div class="main">
+  <div class="sidebar-hover">
+    <p class="pagination">
+      <span class="page">01</span> / <span class="total-pages">08</span>
+    </p>
+  </div>
+  <div class="sidebar-real">
+    <div data-page="1" class="nav-elem nav-1 active"></div>
+    <div data-page="2" class="nav-elem nav-2"></div>
+    <div data-page="3" class="nav-elem nav-3"></div>
+    <div data-page="4" class="nav-elem nav-4"></div>
+    <div data-page="5" class="nav-elem nav-5"></div>
+    <div data-page="6" class="nav-elem nav-6"></div>
+    <div data-page="7" class="nav-elem nav-7"></div>
+    <div data-page="8" class="nav-elem nav-8"></div>
+  </div>
+  <div class="sections">
+    <div class="section section-1">
+<div id="cs50" class="modal-window">
+  <div>
+    <a href="#modal-close" title="Close" class="modal-close">&times;</a>
+    <iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=UUcabW7890RKJzL968QWEykA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>    
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+		<section>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9805; acconstancia </h5></div>  	
+<div id="mainnav">  		
+	<ul>  			
+		<li><a data-tab="home" href="#home">Home</a></li>  			
+		<li><a href="https://www.centraldecurriculos.cf/acconstancia">Currículo</a></li>  			
+		<li><a href="https://www.x3studio.cf">Web design</a></li>		
+		<li><a href="https://www.acconstancia.blogspot.com">Blog</a></li>
+		<li><a href="https://www.acconstancia.ga/wallpapers">Wallpapers</a></li>  			
+		<li><a data-tab="tecnica" href="#tecnica">Técnica</a></li>		
+		<li><a data-tab="yin" href="#yin">Yin Yang</a></li>
+		<li><a data-tab="contato" href="#contato">Contato</a></li>
+	</ul>  	
+</div> <br><br> 	
+<div class="content__item" data-content="home">
+<img class="imagefloat" src="https://1.bp.blogspot.com/-46NaOE64W2s/WJtTb4AqleI/AAAAAAAAD04/YnCQQxznDqMlcA4-7ur4jH8YuzjZ_RC2QCLcB/s1600/carlos0.jpg" alt="" width="200" height="200" border="0">	
+<h2>Antonio Carlos Constancia</h2>  			
+<h3>Web designer | Blogger | Promoter</h3>  			
+<p style='text-align:justify; margin-left:10px;'><i>Olá! Fico feliz de saber que busca informações a meu respeito. Caso eu possa ajudar em algo, ou queira saber mais de minha pessoa não deixe de me contatar, pois, sei coisas incríveis sobre mim...</i></p> 			
+<br><br>
+
+<center>&#10032; &#10032; &#10032; &#10032; &#10032;</center><br>
+<h3>&#9758; <a href="#cs50">CS50's Introduction to Computer Science</a></h3>
+<h6>&#9762; An introduction to the intellectual enterprises of computer science and the art of programming.<br>
+&#10063; Length: 12 Weeks<br>
+&#10063; Effort: 6–18 hours per week<br>
+&#10063; Price: FREE Add a Verified Certificate for R$1,119<br>
+&#10063; Institution: HarvardX<br>
+&#10063; Subject: Computer Science<br>
+&#10063; Level: Introductory<br>
+&#10063; Language: English<br>
+&#10063; Video Transcript: English<br>
+&#10063; Course Type: Self-paced on your time</h6><br><br><br>
+</div>
+
+<div class="content__item" data-content="tecnica">
+<img class="imagefloat" src="http://2.bp.blogspot.com/-fI1qwPwv-aQ/Vb6Bn2sHjYI/AAAAAAAAAFY/h2uXy5ir5LU/s320/imagem.jpg" alt="" width="200" height="200" border="0">	
+<h2>TÉCNICA</h2>  			
+<h3>Conjunto de procedimentos ligados a uma arte ou ciência.</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Técnica do grego téchne, 'arte, técnica, ofício'; arte ou maneira de realizar uma ação ou conjunto de ações. ... É o procedimento ou o conjunto de procedimentos que têm, como objetivo, obter um determinado resultado, seja no campo da ciência, da tecnologia, das artes ou em outra atividade qualquer.<br><br>
+Conceito de técnica. ... Uma técnica é um procedimento que tem como objetivo a obtenção de um determinado resultado, seja na ciência, na tecnologia, na arte ou em qualquer outra área. Por outras palavras, uma técnica é um conjunto de regras, normas ou protocolos que se utiliza como meio para chegar a uma certa meta.<br><br>
+Método é um caminho pra chegar a um fim, é a maneira de conduzir pensamento ou ação para alcançar tal objetivo, também é obter maior eficiência no que deseja realizar. A técnica é a forma de apresentação imediata da matéria, a técnica indica o modo de agir.</h6> 			
+<br><br>
+</div>
+
+<div class="content__item" data-content="yin">
+<img class="imagefloat" src="https://clubedechines.com.br/wp-content/uploads/2020/06/yin-yang.png" alt="" width="200" height="200" border="0">	
+<h2>Yin-Yang</h2>  			
+<h3>NEM TUDO É O QUE PARECE</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Sombra e luz; bem e mal, são condições opostas que se equivalem; nenhuma é melhor ou pior que a outra, e não faz sentido uma eliminar a outra a fim de apenas uma prevalecer. Tudo é relativo. O que é tido com bom pode ser ruim e vice-versa. As estrelas nascem e brilham naturalmente, mas essa "luz" pode cegar. Em um dia ensolarado tem coisa melhor do que "sombra"? Quem nunca ouviu falar de casos em que alguém tentou prejudicar uma pessoa e acabou a ajudando? e vice-versa. o conceito de bem e mal é só mais um dilema da matrix humana; em um dilema é muito provável ficar com peso na consciência independente da escolha.<br><br>
+O bom senso nos diz para seguir pelo caminho do meio; tanto a luz quanto a sombra pode nos servir, se elas existem, então para alguma coisa servem. Não existe inutilidade no universo, tudo tem o seu valor; o que nos restam é absorver o que nos serve e descartar o que não nos serve; exatamente como o nosso organismo faz, o que o nosso organismo elimina serve de alimento para bactérias que ajudam no equilíbrio da terra. Agora, pense no sal e no açucar. Não dá para dizer que um é bom e o outro é ruim; os dois podem nos fazer bem ou mal, depende da dosagem. Da mesma forma, a sombra e a luz podem nos ajudar ou prejudicar; equilíbrio e bom senso é a chave para lidar com ambas e, então, nos fortalecer.<br><br>Antonio Carlos Constancia</h6> 			
+<br><br></div>
+
+<div class="content__item" data-content="contato">
+<img class="imagefloat" src="http://www.blackberrybrasil.com.br/wp-content/uploads/2013/08/contatos-blackberry10.png" alt="" width="200" height="200" border="0">	
+<h2>CONTATO</h2>  			
+<h3>acconstancia@gmail.com</h3><br> 
+</div>
+</section>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>				
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://rawgit.com/romulomachado/simpletabs/master/dist/simpletabs.js'></script>
+</div></div>
+    </div>
+    <div class="section section-2">
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+<section>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9783; Artigos </h5></div>  
+<div id="mainnav">  		
+	<ol class='menu'>  			
+		<li><a data-tab="home" href="#home">Home</a></li>  			
+		<li><a data-tab="artigo02" href="#artigo02">Artigo 02</a></li>
+		<li><a data-tab="artigo03" href="#artigo03">Artigo 03</a></li>		
+		<li><a data-tab="artigo04" href="#artigo04">Artigo 04</a></li>
+		<li><a data-tab="artigo05" href="#artigo05">Artigo 05</a></li>  			
+		<li><a data-tab="artigo06" href="#artigo06">Artigo 06</a></li>		
+		<li><a data-tab="artigo07" href="#artigo07">Artigo 07</a></li>
+		<li><a data-tab="artigo08" href="#artigo08">Artigo 08</a></li>
+		<li><a data-tab="artigo09" href="#artigo09">Artigo 09</a></li>
+		<li><a data-tab="artigo10" href="#artigo10">Artigo 10</a></li>
+	</ol>  	
+</div> <br><br>      
+  <div class="content__item" data-content="home">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	 			
+<h3>Artigo de Opinião</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>O artigo de opinião, como o próprio nome já diz, é um texto em que o autor expõe seu posicionamento diante de algum tema atual e de interesse de muitos. <br><br>
+É um texto dissertativo que apresenta argumentos sobre o assunto abordado, portanto, o escritor além de expor seu ponto de vista, deve sustentá-lo através de informações coerentes e admissíveis. 
+Logo, as ideias defendidas no artigo de opinião são de total responsabilidade do autor, e, por este motivo, o mesmo deve ter cuidado com a veracidade dos elementos apresentados, além de assinar o texto no final. 
+Contudo, em vestibulares, a assinatura é desnecessária, uma vez que pode identificar a autoria e desclassificar o candidato. 
+<br><br>
+É muito comum artigos de opinião em jornais e revistas. Portanto, se você quiser aprofundar mais seus conhecimentos a respeito desse tipo de produção textual, é só procurá-lo nestes tipos de canais informativos. A leitura é breve e simples, pois são textos pequenos e a linguagem não é intelectualizada, uma vez que a intenção é atingir todo tipo de leitor. 
+Uma característica muito peculiar deste tipo de gênero textual é a persuasão, que consiste na tentativa do emissor de convencer o destinatário, neste caso, o leitor, a adotar a opinião apresentada. Por este motivo, é comum presenciarmos descrições detalhadas, apelo emotivo, acusações, humor satírico, ironia e fontes de informações precisas. 
+Como dito anteriormente, a linguagem é objetiva e aparecem repletas de sinais de exclamação e interrogação, os quais incitam à posição de reflexão favorável ao enfoque do autor. 
+<br><br>
+Outros aspectos persuasivos são as orações no imperativo (seja, compre, ajude, favoreça, exija, etc.) e a utilização de conjunções que agem como elementos articuladores (e, mas, contudo, porém, entretanto, uma vez que, de forma que, etc.) e dão maior clareza às ideias.
+Geralmente, é escrito em primeira pessoa, já que trata-se de um texto com marcas pessoais e, portanto, com indícios claros de subjetividade, porém, pode surgir em terceira pessoa.</h6> 			
+<br><br></div>
+
+<div class="content__item" data-content="artigo02">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Motivação ou Automotivação? A escolha é sua</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Se buscarmos as origens e os significados mais profundos sobre a motivação, retroagiremos décadas e décadas e teremos dezenas de significados, conceitos e pontos de vista. Encontraremos centenas de teorias interessantes e até mesmo complexas. Porém, todos direta ou indiretamente concluirão a mesma "essência" do que é motivação.
+Mas não é o significado de motivação que será o escopo deste artigo e sim sua importância, seu envolvimento, sua influência positiva ou negativa em caso de ausência, junto à vida das pessoas.
+<br><br>
+Ouvimos com freqüência alguém falando que "não está motivado" em seu trabalho, "não está motivado" com seu casamento, namoro, curso, vida, que está desmotivado. Paralelamente a isso, busca uma alternativa para culpar, ou seja, apresentar uma justificativa para seu desinteresse por algo, como se não fosse uma decisão pessoal.
+<br><br>
+Durante toda a nossa vida passamos por momentos que muitas vezes causam um grande desgaste, decepção, frustração, ou indignação e ficamos emocionalmente fragilizados. Mas passamos por centenas de momentos, que nos causam alegria, orgulho, satisfação e realização. Sentimentos estes, que causam euforia e vontade de “quero mais”. As lembranças que iremos guardar dos momentos vividos depende de nossa escolha, do que
+damos mais importância para nosso crescimento intelectual, pessoal, afetivo e profissional.<br><br>
+Ser "motivado a" fazer algo é ser dependente de um combustível que pode terminar a qualquer momento e será necessário buscar nova fonte de energia para esta motivação. É estar aberto a maiores frustrações por gerar expectativas sobre algo ou pessoas, diferente do que poderá acontecer e do que poderão realizar.<br><br>
+Ser “motivado a” é aguardar alo acontecer, algo externo, que não depende exclusivamente de você e sim de algo que o motive, o conquiste, o leve realizar. É realizar algo que poderá dar errado pois você não desejou realmente realizar aquilo e sim aproveitou o momento para realizar.<br><br>
+Ser "motivado a" realizar algo é ter algo que o leve a realizar, chame sua atenção, desperte seu interesse criando a curiosidade de vir a participar ou colaborar com algo. Já ter AUTOMOTIVAÇÃO é se manter programado para buscar de maneira continuada aquilo que acredita, deseja e faz parte de seu ideal.<br><br>
+A pessoa automotivada reconhece seus erros, desenvolve novas estratégias, reorganiza seu plano de vida, divide suas alegrias com as pessoas próximas, tem bem definido o que deseja conquistar em sua vida e o que é prioridade. Não se abala pelo cansaço devido ao excesso de tentativas mas sim demonstra euforia pela oportunidade em poder buscar o sucesso realizando novamente de forma mais precisa.<br><br>
+Ser automotivado é amanhecer tendo a certeza que irá fazer algo novo, fazer o comum se tornar diferente. O automotivado encara seus desafios como oportunidades de aprendizado e autodesenvolvimento. Quando uma pessoa é automotivada, passa a ver as situações de formas positivas, em vez de desenvolver expectativas cria possibilidades, em vez de utilizar o tempo justificando um novo problema, potencializa o tempo apresentando uma nova oportunidade em vez de apontar culpados pelos fracassos demonstra interesse em treinar novos vencedores.<br><br>
+Ser automotivado é ir além. É não precisar viver sendo empurrado e incentivado. É lutar por tudo o que acredita, pelo desenvolvimento humano e pessoal, pelas realizações pessoais, pela conquista ética de seus objetivos. É ter a energia inesgotável em seu coração, em sua alma e utilizar a mesma para aquecer e gerar energia em todas as pessoas a sua volta, fazendo que todos vejam outros caminhos a se seguir.<br><br>
+Motivar é mover. Automotivar é avançar. Onde você se encontra? Movendo coisas ou avançando em busca de seus objetivos?</h6> 			
+<br><br></div> 
+
+<div class="content__item" data-content="artigo03">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>A Magia Está em Você</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Stonehenge é um monumento pré-histórico localizado ao sul da Inglaterra, o qual é formado por um conjunto de pedras dispostas em forma circular com uma incrível precisão matemática. Cientistas estimam que essas pedras estão lá há mais de 5.000 anos. Ninguém sabe quem as colocou e existe um grande mistério em torno da história do local.
+<br><br>
+O fato mais fascinante é o incrível silêncio com que os visitantes admiram cada detalhe do lugar. É muito comum encontrar pessoas em êxtase, fascinadas e encantadas com a história e outras que comentam que pagaram caro para apenas ver pedras, como foi o caso de um jovem espanhol.
+Esse comentário levou-me a uma reflexão. Por que será que alguns viam mágica no lugar e outras simplesmente pedras? Por que algumas pessoas vêem mágica em suas vidas e outros não? A diferença, talvez, esteja nos pontos abaixo:
+<br><br>
+Acredite na mágica que há dentro de você. Toda pessoa é um ser mágico, sua concepção e nascimento foi uma grande magia da natureza. Acredite, existe um grande poder dentro de você, um poder que é capaz de mudar suas atitudes, influenciar o meio em que você vive. A escolha é sua! Você pode decidir entre realmente fazer a diferença ou ser mais um no meio da multidão. Mas, saiba que como todo bom mágico é preciso muito trabalho e perseverança para estar entres os melhores. Acreditar nos seus dons, nos seus sonhos, no seu talento é a base para construir uma carreira de sucesso.
+<br><br>
+Experimente novas cores em sua vida. Provoque e construa mudanças positivas. Experimente uma nova vida colocando novos temperos em seu dia-a-dia. Crie novos hábitos como a leitura, o trabalho voluntário, opinar e dar mais idéias no ambiente de trabalho. Não mude tudo! Não seja radical, comece com pequenas mudanças no comportamento. Quer ser mais paciente, menos ansioso, pratique a meditação. Que ter mais pique no trabalho, pratique mais atividades físicas. Comece trocando 02 ou 03 maus comportamentos por outros mais salutares. Mude sua percepção sobre os fatos, procure ver o contexto, não tire conclusões precipitadas, somente decida ou comente algo quando estiver convicto que vale a pena fazê-los. 
+<br><br>
+Crie momentos mágicos. A platéia, digo, sua família, colegas de trabalho, clientes e comunidade, estão todos ávidos por um novo show. Tenha o bom humor, o alto astral sempre como aliados. Procure iluminar o lugar em que você vive. Demonstre seu entusiasmo pela vida, paixão naquilo que faz, agradeça sempre ao Criador por tudo o que você tem e é. Conheci um mestre que dizia que problema sério é problema de saúde, o resto você pode, deve e vai superar. Tenha sempre essa certeza. Não faça tempestade em copo d’água, não crie problemas imaginários e pare de procurar “pêlo em ovo” pois assim você acaba encontrando. A vida é curta demais para torná-la um grande peso, seja pró-ativo e foque a solução do problema.<br><br>
+Ensine seus momentos mágicos. Agora que você conhece novos truques para encantar seus expectadores é hora de repassar seus conhecimentos e nova filosofia de vida. Divulgue e treine as pessoas à sua volta. Peça sempre um sorriso, faça questão de um “bom dia” diferente, estimule pensamentos positivos, aceite sugestões, mantenha a porta e o coração abertos e aumente a auto-estima de toda e qualquer pessoa que conviva com você. A velha e boa história de “faça o bem, não importa a quem” vai se tornar um grande impulso para novos saltos em sua vida.<br><br>
+A decisão é sua. Assim como em Stonehenge o visitante deve decidir se quer ver somente pedras ou o encanto do lugar. A magia está dentro de você. Tá na hora de procurar onde você tem deixado sua varinha de condão.</h6> 			
+<br><br></div> 
+
+<div class="content__item" data-content="artigo04">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Da timidez</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Ser um tímido notório é uma contradição. O tímido tem horror a ser notado, quanto mais a ser notório. Se ficou notório por ser tímido, então tem que se explicar. Afinal, que retumbante timidez é essa, que atrai tanta atenção? Se ficou notório apesar de ser tímido, talvez estivesse se enganando junto com os outros e sua timidez seja apenas um estratagema para ser notado. Tão secreto que nem ele sabe. É como no paradoxo psicanalítico, só alguém que se acha muito superior procura o analista para tratar um complexo de inferioridade, porque só ele acha que se sentir inferior é doença.<br><br>
+Todo mundo é tímido, os que parecem mais tímidos são apenas os mais salientes. Defendo a tese de que ninguém é mais tímido do que o extrovertido. O extrovertido faz questão de chamar atenção para sua extroversão, assim ninguém descobre sua timidez. Já no notoriamente tímido a timidez que usa para disfarçar sua extroversão tem o tamanho de um carro alegórico. Daqueles que sempre que-bram na concentração. Segundo minha tese, dentro de cada Elke Maravilha existe um tímido tentando se esconder e dentro de cada tímido existe um exibido gritando "Não me olhem! Não me olhem!" só para chamar a atenção.<br><br>
+O tímido nunca tem a menor dúvida de que, quando entra numa sala, todas as atenções se voltam para ele e para sua timidez espetacular. Se cochicham, é sobre ele. Se riem, é dele. Mentalmente, o tímido nunca entra num lugar. Explode no lugar, mesmo que chegue com a maciez estudada de uma noviça. Para o tímido, não apenas todo mundo mas o próprio destino não pensa em outra coisa a não ser nele e no que pode fazer para embaraçá-lo.
+<br><br>
+O tímido vive acossado pela catástrofe possível. Vai tropeçar e cair e levar junto a anfitriã. Vai ser acusado do que não fez, vai descobrir que estava com a braguilha aberta o tempo todo. E tem certeza de que cedo ou tarde vai acontecer o que o tímido mais teme, o que tira o seu sono e apavora os seus dias: alguém vai lhe passar a palavra.<br><br>
+O tímido tenta se convencer de que só tem problemas com multidões, mas isto não é vantagem. Para o tímido, duas pessoas são urna multidão. Quando não consegue escapar e se vê diante de uma platéia, o tímido não pensa nos membros da platéia como indivíduos. Multiplica-os por quatro, pois cada indivíduo tem dois olhos e dois ouvidos. Quatro vias, portanto, para receber suas gafes. Não adianta pedir para a platéia fechar os olhos, ou tapar um olho e um ouvido para cortar o desconforto do tímido pela metade. Nada adianta. O tímido, em suma, é uma pessoa convencida de que é o centro do Universo, e que seu vexame ainda será lembrado quando as estrelas virarem pó.</h6><br><br></div>
+
+<div class="content__item" data-content="artigo05">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>O que as pessoas mais querem além de sexo e dinheiro?</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>O que acontece quando duas comadres se encontram, quando um grupo de amigos se reúne? Gasta-se muito mais tempo praticando o passatempo favorito da grande maioria: tricotar, fofocar e falar mal dos outros. Raramente se ouve um elogio. Por que isso acontece? Por que temos a tendência de focar mais nos aspectos negativos dos acontecimentos e das pessoas e não nos seus aspectos positivos?<br><br>
+Os noticiários estão recheados de notícias de violência, mortes, seqüestros, assaltos, guerras, catástrofes naturais, corrupção, críticas e outras notícias de teor negativo. Uma das colunas mais lidas e comentadas da revista Veja é a coluna do Diogo Mainardi, um ferrenho crítico de tudo e de todos. Um dos livros mais vendidos atualmente é o livro de crônicas do colunista e crítico Arnaldo Jabor.<br><br>
+Muitos culpam os meios de comunicação por esta tendência de focar apenas o errado, o ruim. Criticam o seu excesso de criticismo e de negativismo. Mas será que a culpa é realmente dos meios de comunicação? Na verdade, eles dão aquilo que o público quer receber. E, desgraçadamente, a grande maioria do público quer ver e ouvir sobre sangue, lágrima, podridão, violência, desgraça, dor e sofrimento.<br><br>
+Por que somos tão críticos?<br>
+Uma criança ouve em média nove “não” para cada “sim”. Na mesma proporção, ela é censurada, criticada e podada naquilo que faz. Poucas vezes ela recebe um elogio ou um incentivo pelos seus atos. Educada desta forma, é natural que introjete essas mesmas características herdadas de seus pais e orientadores, tornando-se também um crítico contumaz. Outra provável causa desta tendência de ser crítico pode ser a forma como o organismo humano está programado instintivamente a focar prioritariamente em tudo que possa trazer dor e sofrimento, em tudo que possa prejudicar a sua sobrevivência. Assim, tendemos a focar muito mais em tudo aquilo que possa nos prejudicar, em tudo aquilo que possa ser fonte de desprazer e de mal estar.<br><br>
+Existem várias profissões em que as pessoas são pagas para criticar. Temos os críticos de arte, de cinema, de literatura e inúmeros cronistas e colunistas que fazem sucesso por seus comentários ácidos e críticos. Não me lembro no momento de nenhuma profissão em que a pessoa receba algum tipo de remuneração para elogiar e falar bem das coisas e das pessoas, fora os puxa-sacos. Você conhece alguma? Talvez essas pessoas devessem ser os profissionais mais bem pagos do mercado pelo incentivo, pela motivação e pelo bem estar que criariam nas pessoas...<br><br>
+As pessoas querem satisfazer sua necessidade de auto-afirmação<br>
+Várias pesquisas realizadas demonstram que uma das coisas mais desejadas pelas pessoas é satisfazer a sua necessidade de auto-afirmação. As pessoas querem ser valorizadas e de ter suas qualidades e suas realizações reconhecidas. Querem se sentir importantes e aceitas socialmente.<br><br>
+Por outro lado, a maioria das pessoas apresenta certa dificuldade em elogiar. O sábio e perspicaz Oscar Wilde expressou essa dificuldade, ao afirmar:<br><br>
+<i>
+“Qualquer um pode compartilhar o sofrimento de um amigo, 
+mas só uma pessoa excepcional 
+é capaz de se revelar sensível ao êxito de um amigo”.</i><br><br>
+Muitos pais acreditam que devem censurar seus filhos sempre que estes agem de forma não adequada ou moralmente condenável. Acreditam que, agindo dessa forma, estão ensinando seus filhos a diferenciar entre o certo e o errado, estão mostrando a eles os limites do tolerável e do aceitável. O objetivo pode até ser louvável e meritório. Porem, não basta apenas impor limites, censurar e criticar para um bom aprendizado. É preciso, também, não economizar na hora de elogiar e de incentivar, sempre que a pessoa fizer por merecer.<br><br>
+Uma pesquisa realizada no ano passado pelo Instituto Gallup, junto a quatro milhões de trabalhadores nos EUA, constatou que 65% deles não receberam um único elogio dos seus superiores por algo que fizeram durante os últimos doze meses. Isso se reflete no nível de insatisfação, falta de incentivo, baixa auto-estima, falta de auto-afirmação e de estresse no ambiente de trabalho. É altíssimo o custo anual estimado em mais de US$ 85 bilhões referentes aos custos das faltas ao trabalho, despesas com tratamento de saúde, seguros e diminuição da produtividade. No Brasil, pesquisas apontam que aproximadamente 75% das pessoas estão insatisfeitas com o seu trabalho.<br><br>
+Aprenda a elogiar<br>
+Saber elogiar é uma das qualidades fundamentais das pessoas sedutoras. Quem não gosta de receber um elogio? O elogio é um produto muito valorizado e procurado no mercado, porém muito escasso. Todo mundo procura receber o seu elogio, mas poucos são os que estão dispostos a concede-lo. Se você quer se tornar uma pessoa sedutora, aprenda a arte de elogiar. Uma coisa tão simples de dar, não tem nenhum custo, não vai tirar um pedaço de você, faz tão bem para as pessoas e que, mesmo assim, a maioria das pessoas tem dificuldade em dar. Quanto mais elogios você der, mais você receberá. Por isso, meu amigo / minha amiga não economize na hora de elogiar. Veja quantos dividendos a sua doação vai trazer para você. Tente, experimente e comprove os resultados...<br><br>
+Faça um elogio sincero, sempre que tiver oportunidade, seja no ambiente familiar, social, amoroso ou profissional. As pessoas gostam de receber um elogio verdadeiro, mas percebem quando um elogio soa falso e fora de hora. Um elogio soa verdadeiro quando a pessoa sente que fez por merece-lo. Ao elogiar uma pessoa, não use apenas palavras bonitas e elogiosas. Transmita todo o sentimento sincero que deve brotar do seu coração, da sua essência. Descubra, também, aquilo que a pessoa mais valoriza em si mesma. O impacto de um elogio é maior quando você elogia aquilo que a própria pessoa valoriza em si mesma.<br><br>
+Para reforçar o impacto de um elogio, escolha o momento certo para faze-lo. Se o elogio for dado em público, na presença de outras pessoas, reforça o sentimento de valorização. Você também pode elogiar uma pessoa indiretamente, comentando sua satisfação e apreciação de suas qualidades para uma terceira pessoa, que, logicamente, irá fazer chegar seus elogios à pessoa alvo. Esta tática reforça a sinceridade de seu elogio e passa a impressão de que você fala bem da pessoa para todo mundo. Falar bem das pessoas pelas costas tem um impacto muito grande porque é mais comum se falar mal das pessoas pelas costas.<br><br>
+Se o elogiado for você, não diga apenas “muito obrigado” ou “não foi nada”. O modo como você recebe um elogio demonstra seu apreço e admiração pela pessoa que fez o elogio. Se você não demonstrar muito entusiasmo com o elogio, a pessoa pode se sentir frustrada e pode não querer mais repetir o ato. Ao receber um elogio, demonstre sua emoção com clareza e desfrute deste momento com a pessoa que fez o elogio, mostrando sua apreciação sincera.<br><br>
+Veja o lado positivo das coisas e das pessoas<br>
+Um dos traços mais tóxicos e negativos é o de reclamar de tudo e de todos. As pessoas portadoras de um baixo astral têm o pensamento focado apenas nos problemas e no lado ruim das coisas. Fazem comentários pessimistas e negativos e vivem reclamando da vida. Passam a impressão de serem amargas, pessimistas, cheias de problemas pessoais e excessivamente críticas. Verdadeiras malas sem alça (e sem dólares) que todos querem evitar.<br><br>
+Se você quer causar uma boa impressão e se tornar uma pessoa apreciada, uma pessoa verdadeiramente sedutora, diga apenas coisas positivas. Veja e exponha o lado positivo dos acontecimentos. Evite fazer comentários negativos. Jamais faça ou traga suas queixas pessoais no convívio com outras pessoas. Faça os seus desabafos e suas confissões somente para as pessoas mais íntimas em quem você confia, em particular e nos momentos propícios.<br><br>
+Evite também falar mal das pessoas. Se você faz comentários negativos e participa de fofocas, as pessoas vão achar que você vai falar mal delas para outras pessoas e não vão se abrir com você.
+<br><br>
+Se você tiver que dar um feedback negativo para uma pessoa, saiba como faze-lo de forma a minimizar os efeitos negativos e evitar mágoas e ressentimentos. Procure dar o feedback em particular, no momento mais apropriado.<br><br>
+Faça as pessoas se sentirem importantes<br>
+<i>
+“Há grandes homens que fazem com que 
+todos se sintam pequenos. 
+Mas o verdadeiro grande homem 
+é aquele que faz com que todos se sintam grandes”.
+Gilbert Keith Chestenton</i>
+<br><br>
+Para ser uma pessoa sedutora, faça com que todos se sintam grandes. Cumprimente, dê atenção e fale com as pessoas, não importa sua classe social, profissão, credo religioso, raça, etnia, preferência sexual ou aparência física. Mesmo que você seja o CEO de uma grande organização, cumprimente e fale com o porteiro do prédio, a copeira, o garçom, o operário e o contínuo. Demonstre que você se preocupa com eles. Faça com que todos se sintam importantes.
+<br><br>
+Tenha também o hábito de dizer: por favor, obrigado e agradecer as coisas que as outras pessoas lhe fazem, mesmo coisas que estão implícitas que sejam obrigações delas. Um agradecimento mostra gratidão e apreço pelo próximo. É interessante notar que temos a tendência de negligenciar esses pequenos e importantes mimos com as pessoas que nos são mais caras e com quem convivemos mais intimamente. Toda vez que uma pessoa querida lhe fizer um favor, agradeça. Toda vez que ela fizer por merecer, elogie. Vá registrando esses acontecimentos num caderno. Quando tiver dez registros positivos, escreva uma carta carinhosa para esta pessoa, cheia de elogios e agradecimentos, rememorando cada um desses fatos e dizendo por que você a ama tanto. Deixe a carta num lugar visível antes de sair para o trabalho. Depois nos conte os resultados...
+<br><br>
+Evite a tendência de querer aparecer demais, de demonstrar ser superior, de querer controlar tudo, de ser mais inteligente ou mais capaz que os outros. Essa demonstração explícita de conhecimento, poder e de autopromoção cria uma imagem de ser uma pessoa megalomaníaca, egocêntrica, arrogante e insegura, com enorme necessidade de auto-afirmação, alem de ser extremamente antipática.
+<br><br>
+Ontem a noite assisti ao programa final de O Aprendiz II. Mais uma vez ficou patente a importância daquilo que Daniel Goleman chamou de inteligência emocional. Mais um fato real que comprova que o sucesso pessoal e profissional das pessoas que ocupam os cargos mais importantes nas organizações se deve, na maior parte, à sua habilidade em interagir, influenciar, convencer, dirigir e liderar pessoas, criando um ambiente onde todos se sintam bem e valorizados. Mais uma vez ficou comprovado que nem sempre o mais preparado tecnicamente, o que tem a melhor capacidade de realização é o que tem mais sucesso.<br><br>
+Tatiana foi a candidata que obteve os melhores resultados. Venceu todas as tarefas em que foi a líder. Impressiona a sua pró-atividade, a sua capacidade de passar por cima de tudo e de todos como um trator para atingir os seus objetivos. Porém, seu estilo de liderança deixava as pessoas com quem trabalhava constrangidas e ressentidas. Não criava a empatia e nem motivava as pessoas a darem o máximo de si. Na tarefa final, teve até participante que ela escolheu para sua equipe que estava torcendo para o outro líder ser o vencedor. Toda a capacidade de realização de Tatiana não foi o suficiente para torna-la vencedora. Venceu o candidato que não foi tão brilhante nos resultados quando foi líder. Venceu o Porcel que demonstrou possuir maior preocupação com as pessoas, uma pessoa bem humorada, com bastante carisma, que sabia tratar bem as pessoas, que delegava sem pressionar demais, que confiava e ouvia as pessoas, enfim, que fazia com que todos se sentissem grandes. Reflita bem sobre essas particularidades.<br><br>
+Lembre-se de que as pessoas vão gostar mais de você pelo seu bom senso em valorizar e fazer as pessoas se sentirem emocionalmente compreendidas e correspondidas em suas necessidades de reconhecimento e de auto-afirmação e não pela sua demonstração de conhecimento e de inteligência.<br><br>
+Faça um elogio sincero para você mesmo<br>
+Quando foi a última vez que você fez um elogio para você mesmo? Faz um bocado de tempo? Pois é... Se já é difícil elogiar os outros, imagino como é difícil elogiar a si próprio. Somente a você cabe mudar esse estado de coisas. A partir de agora, toda vez que você fizer algo de positivo, algo altruísta e do qual você se orgulhe, escolha fazer um elogio sincero para você mesmo, um elogio que venha do fundo do seu coração. Sua auto-estima vai lhe agradecer penhoradamente, lá do alto.
+<br><br>
+Êpa! Estava me esquecendo de passar a lição de casa. A partir de hoje, escolha fazer diariamente no mínimo dois elogios sinceros e verdadeiros. Aumente um elogio a mais a cada dia que passar, até chegar a no mínimo dez elogios diários. Se quiser, pode exceder a dosagem recomendada. Não há contra-indicação nem efeitos colaterais. Ao mesmo tempo, diminua o número de críticas que você faz diariamente, na mesma proporção. Daqui a trinta dias, conte-nos o que mudou em sua vida.
+<br><br>
+P.S – Lembre-se de que um pequeno desvio de apenas um grau para cima no trajeto horizontal pode parecer imperceptível no presente, mas fará uma diferença significativa ao longo do tempo. Tenha por hábito fazer pequenas mudanças positivas no dia a dia em sua vida, de forma contínua e ininterrupta. Coisas simples que qualquer pessoa pode fazer, mas que terão um grande impacto no seu caminho rumo a excelência. Depois de algum tempo, você vai se surpreender positivamente com os imensos progressos e as melhorias significativas acumuladas em sua vida. Você vai se surpreender com as reações das pessoas à sua personalidade cada dia mais sedutora...</h6><br><br></div> 
+
+<div class="content__item" data-content="artigo06">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Desapegue-se, mude e seja feliz</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Por sermos seres dotados de emoções desenvolvemos vários hábitos durante toda nossa vida. Grande parte destes hábitos é adquirida durante nossa infância e adolescência, fases estas responsáveis pela formação de nossas referências e valores pessoais.<br><br>
+Os hábitos mais simples como guardar as cartinhas de amores passados, brinquedos quebrados, roupas que não nos servem mais e outros cacarecos são ocasionados por nos apegarmos a momentos que foram marcantes em nossas vidas. A cartinha daquele amor antigo traz, muitas vezes, a lembrança de instantes felizes que foram vividos ou uma esperança de poder desfrutar novamente um momento como aquele. A roupa que não serve mais mostra a maneira como nos comportávamos e pensávamos. Isso causa em nossa memória efeitos nostálgicos e melancólicos de um passado que não poderá se repetir, mas desejamos mantê-lo presente em nossas lembranças.<br><br>
+Juntando as décadas de nossa existência, acumulamos todos estes hábitos e apegos com mais outros que passaram a fazer parte de nossas experiências pessoais, profissionais e familiares. Acumulamos muitas coisas abstratas nessa relação, além de todos os objetos concretos acumulados durante a vida.<br><br>
+Pode ser que pelo fato de trabalhar por longo período de tempo exercendo determinada atividade você passou a acreditar que aquela é somente a SUA função. Habituou-se a executar alguma tarefa e passou a julgar que SUA metodologia era a ÚNICA a ser utilizada. Talvez, por ter implantado determinado projeto ou feito parte dele em algum momento acabou IMAGINANDO que se você deixar de participar, o projeto não sobreviverá.<br><br>
+As revoluções industriais ocorridas nos séculos passados exigiram grandes adaptações de todos. Foi desenvolvido o motor a vapor que passou a dar vida a máquinas e locomotivas. A máquina de tear passou a produzir 24 mais fios que as máquinas rudimentares existentes. As novas mudanças trouxeram fatos positivos para todos, até mesmo para os escravos.<br><br>
+Foi criado um novo descaroçador de algodão que tinha capacidade para trabalhar mil libras de algodão, enquanto que ao mesmo tempo, um escravo trabalhava apenas cinco. Ou seja, a máquina fazia o serviço de 200 escravos e não precisava ser alimentada, não adoecia nem precisava ser controlada. Apenas exigia a manutenção e alguém para operá-la. Esta inovação com certeza passou a colaborar para um futuro promissor àqueles que eram escravos e teriam sua liberdade em breve, graças a uma boa idéia e a uma máquina bem desenvolvida. A propósito, não podemos esquecer que alguém precisou adaptar-se às mudanças e inovações aprendendo a utilizar aquela nova ferramenta de trabalho. Também garantiu seu emprego e diferenciou-se da maioria dos trabalhadores que não tinham conhecimento nem habilidades para lidar com a nova máquina.<br><br>
+Aceitar e nos adaptar às mudanças que ocorrem à nossa volta, nem sempre é confortável. Mudar, para alguns, acaba sendo extraordinariamente complicado e até traumático pois se trata de fazer uma reanálise dos conceitos e atitudes. Sempre existirá uma resistência, mesmo que implícita, para as mudanças e tomadas de decisões que julgamos radicais para nossas vidas. Temos receios da nova tecnologia desenvolvida. Medo que venha a nos substituir. Mas é necessário compreender que as mudanças têm, por finalidade, na maioria das vezes, proporcionar melhorias a você, sua família e todos de sua equipe de trabalho e sempre será necessário existir alguém para operacionalizar as tecnologias existentes, desde que esteja preparado para se envolver com elas.<br><br>
+A felicidade e realização não estão condicionadas apenas ao passado ou ao que sempre fizemos. As mudanças existem para melhorar a qualidade de vida e proporcionar o desenvolvimento de todos. Sem o avanço tecnológico, sem as mudanças e inovações existentes talvez este artigo não estivesse ao alcance de todos. Tanto este artigo, quanto a previsão do tempo, os pacotes de viagens, os filmes que você assiste com a família, o cartão de crédito, o forno de microondas, as comidas congeladas e todas as inovações que direta e indiretamente contribuíram para facilitar nossas vidas hoje.
+<br><br>
+Enfim, mude, reveja seus conceitos e seja feliz com suas novas descobertas e adaptações. O mundo continuará a funcionar caso você opte por realizar algo diferente, outra atividade e até mesmo se você viajar de férias para outro lugar e não apenas para a mesma pousada que freqüenta há décadas.</h6><br><br></div> 
+
+<div class="content__item" data-content="artigo07">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Empreendedorismo e Liderança nas empresas</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>A quantidade de empreendedores no Brasil é muito grande e isso é muito bom. Geralmente estas pessoas começam um negócio quando conhecem muito bem um produto, um segmento de mercado ou um determinado setor de empresas; ou ainda porque estão com alguma reserva financeira disponível, porque querem ser seus próprios patrões ou estão tendo dificuldades de voltar ao mercado de trabalho.<br><br>
+Muitas vezes esquecem que terão de ser bons líderes para conseguir fazer o negócio crescer, senão correm o risco de terem uma empresa com um só funcionário: o proprietário.
+<br><br>
+Ser líder é diferente de ser administrador, gerente ou chefe. Liderar é lidar com pessoas, administrar é lidar com recursos, papéis, coisas, processos. Um chefe pode ser nomeado numa hierarquia, independentemente de possuir ou não as qualidades necessárias. Você pode ser um gerente e não conseguir ser o líder da equipe e pode ser o líder da equipe sem ser o chefe. 
+<br><br>
+Um bom líder precisa possuir várias virtudes, entre elas: competência (conhecimento, habilidades e atitude/ação), ética (integridade e honestidade), entusiasmo, empatia, autoconfiança, sensibilidade, humildade, imparcialidade, saúde, autoconhecimento, motivação e inteligência acima da média. É fundamental que goste de se relacionar com pessoas, que saiba ouvir e que seja observador.
+<br><br>
+O empreendedor precisa atentar para o fato de que a presença de um líder é fundamental para o sucesso de qualquer negócio. O ideal é que procure desenvolver habilidades de liderança caso não seja um líder nato. É necessário que tenha alguém para conduzir o grupo de onde está até onde precisa estar. Para fazer com que a equipe faça voluntariamente o que precisa ser feito. Para extrair o melhor de cada colaborador e com isso conseguir obter os resultados positivos.<br><br>
+Os pequenos empresários costumam cometer alguns erros na administração de seus negócios, muitos por falta de liderança, entre eles posso citar:<br><br>
+- Não se conhecem suficientemente para saber as competências que lhes falta para buscar treinamento ou pessoas com tais capacidades;<br>
+- Não conhecem o ponto de equilíbrio de seu negócio e gastam mais do que podem;<br>
+- Contratam pessoas que não são adequados às funções. Não é proibido contratar amigo ou parente, mas é proibido contratar gente incompetente para a função;<br>
+- Adiam decisões que precisam ser tomadas rapidamente;<br>
+- Não suprem seus colaboradores e a si mesmos com os treinamentos necessários. Não têm uma política de treinamentos;<br>
+- Assumem compromissos que não têm capacidade de cumprir; e<br>
+- Esquecem que os clientes são o maior patrimônio das empresas. Todos os colaboradores na organização precisam “servir” o cliente e não “servir” o patrão. Sem clientes o negócio está fadado ao fracasso.<br><br>
+Ser líder é difícil, mas é bom. Para se tornar um bom líder é preciso procurar estar preparado, ser proativo e ser reflexivo. É importante ainda se auto-avaliar, procurar melhorar continuamente e ter entusiasmo e otimismo.<br><br>
+Um outro problema que acontece é que algumas vezes o empreendedor transfere toda a responsabilidade de liderança para o gerente de sua empresa. Quanto mais delega atribuições mais o líder penetra na essência de sua função: que não é "fazer" e sim "fazer os outros fazerem". Agora o empresário não pode ignorar que quando ele delega continua com a responsabilidade pelo êxito ou fracasso do empreendimento. Por isso ele precisa acompanhar aqueles que recebem a tarefa, pedir que prestem contas temporariamente e não só no final do ano. Controlar o uso de todos os recursos, inclusive os recursos humanos. Se o gerente não tiver sucesso ele será o culpado: ou por ter contratado errado, ou por não ter treinado da maneira correta ou ainda por não ter controlado suficientemente.</h6><br><br></div> 
+
+<div class="content__item" data-content="artigo08">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Sacudindo os Neurônios Para Ter Novas Idéias</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Você sabe porque os automóveis para táxis na Inglaterra são obrigatoriamente altos? Para dar espaço para as cartolas dos passageiros. Sabe porque as moedas são circulares? Porque em algum momento da história da humanidade fabricava-se moedas com materiais quebradiços. A forma de círculo ajudava, portanto a evitar que os cantos quebrassem.
+Acontece que os carros não precisam mais ser altos, nem as moedas circulares, mas eles simplesmente continuaram a ser como eram.
+<br><br>
+Não estamos habituados a questionar porque as coisas são como são. Segundo Edward de Bono, especialista em Criatividade, padecemos de uma espécie de continuísmo mental, o que dificulta nossa percepção de oportunidades para melhorias.<br><br>
+Uma boa forma de percebermos possibilidades de mudanças é justamente enfrentarmos as fontes de continuísmos e nos desafiarmos a pensar em alternativas.<br><br>
+Veja os tipos mais freqüentes de continuísmos:<br><br>
+Negligência<br>
+Nossa mente aprendeu a resolver problemas, e deixa de perceber o que não incomoda. Desta forma, tudo que ainda não virou problema tende a ser negligenciado. Pior ainda, a negligência é prima irmã da arrogância: sempre que estamos satisfeitos com nosso trabalho ou produto, deixamos de aprimorá-los.<br><br>
+Seqüência<br>
+Como as moedas e os automóveis ingleses, há inúmeros procedimentos, acessórios, cores e formatos que nunca foram modificados. Mas eles precisam mesmo ser assim?<br><br>
+Dependência<br>
+Acontece quando a evolução de certos produtos ou procedimentos depende de fatores ou instituições que são vistos como atravancadores. Podemos entretanto usar nossa criatividade também para contornar os fatores. Digamos que você teve uma idéia cuja implementação é cara. Mas...Precisa parar por aí? Que tal gerar idéias para reduzir os custos de implementação?<br><br>
+Complacência<br>
+É o famoso “deixa quieto”. Acontece quando nos submetemos a crenças para deixar de criar, ou de lutar para que inovações sejam feitas. Você já ouviu frases como "o mercado não está preparado", “é inviável”. Questione-as também.
+Quer gerar idéias? Olhe ao seu redor e pergunte-se: Onde está a negligência? (e a seqüência, a dependência, a complacência?) Pergunte-se também “E se...?”, “Por que isso é como é?”, “Dá para fazer diferente?” Pergunte-se principalmente “Por que não?”
+<br><br>
+Você vai amar as respostas.</h6><br><br></div>
+
+<div class="content__item" data-content="artigo09">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Mudando Comportamentos</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Em que são baseadas nossas escolhas? Por que adotamos este comportamento e não aquele? Experiências passadas, referências, crenças, nossa formação podem ser suficientes para responder estas questões. O fato é que as reações, nossas escolhas foram as melhores que tínhamos disponíveis naquele momento de decisão.<br><br>
+Todo comportamento tem uma intenção positiva para quem o pratica. Mesmo não sendo a melhor escolha social ou que vá agradar as pessoas a sua volta. Quem age tem uma causa, uma razão. Para a Programação Neurolingüística os motivos de um comportamento são sempre positivos.<br><br>
+Um dos pressupostos básicos da PNL chama-se flexibilidade. Procuramos expandir nosso mapa para termos mais escolhas e quanto mais as tiver, mais você estará livre e menos influência sofrerá. A PNL permite seu autodesenvolvimento e mudança. Você usa primeiro para mudar a si mesmo – “Quando eu mudo em mim o mundo muda para mim” – e em segundo lugar para ajudar a melhorar as pessoas que estão a sua volta. Quanto mais souber a respeito de si mesmo, mais poderá ajudar os outros. Exercitando nossa flexibilidade somos capazes de nos colocar em segunda posição. Segundo Joseph O´Connor (Manual da Programação Neurolingüística, Qualitymark, pág. 39), “estar em segunda posição é dar o salto criativo de sua imaginação para compreender o mundo a partir da perspectiva de outra pessoa, pensar de forma pela qual ela pensa”. <br><br>
+Comportamentos indesejados, reações recorrentes, a bebida, o cigarro apresentam, de alguma forma um ganho secundário. Algo que torne essa ação prazerosa. Às vezes esses comportamentos oferecem uma resistência maior à mudança. Uma boa opção é produzir escolhas, outras opções que possam fornecer o mesmo prazer que a atividade lhe proporciona. Toda grande mudança possui:<br><br>
+1- O Desejo – O seu desejo. Sinta-se merecedor daquilo. Você possui todos os recursos que precisa para atingir o nível de mudança desejado. Esta meta é possível e você pode chegar lá.<br><br>
+2- O Problema – Este é o estado atual. Como você se encontra agora. O que precisa ser mudado para a ecologia ser completa. Estabeleça um problema de cada vez e se esse for muito grande segmente-o para tornar-se mais fácil sua resolução.<br><br>
+3- A Boa Formulação de Objetivos – Nesta etapa você vai se programar. Traçar seu plano de ação para conseguir o resultado desejado. Liste todas as ações possíveis para você e não se esqueça da ecologia.<br><br>
+4- A Ação – A partir do plano traçado, chegou a hora da ação. Comece gradativamente e vá anotando todos os ganhos que você obter. Parabenize-se quando tiver um resultado positivo. Se for preciso use sua flexibilidade e altere o plano.<br><br>
+5- A Revelação – À medida que suas ações forem praticadas, seu comportamento automaticamente irá mudar. Você poderá não perceber, mas os outros a sua volta sentirão a mudança e lhe darão o feedback.<br><br>
+6- O Auto-Conhecimento – Aprenda com isso. Transforme a experiência negativa em recursos. Eles serão úteis para você e para os outros.</h6><br><br></div> 
+
+<div class="content__item" data-content="artigo10">
+<img class="imagefloat" src="https://outmarketing.pt/wp-content/uploads/2014/09/escrever-artigos-de-opiniao.png" alt="" width="200" height="200" border="0">	  			
+<h3>Autodesenvolvimento? Só depende de você</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Qualquer reflexão sobre o autodesenvolvimento passa primeiro, por um entendimento de que DESENVOLVER implica em romper laços, amarras, e sabemos que, em qualquer uma das dimensões humanas (física, emocional, mental, social, ou espiritual), todo desenvolvimento exige que rompamos com um padrão já adquirido, para adotarmos outro, que é novo e que é uma etapa natural da evolução humana.
+<br><br>
+Desenvolvimento significa o aumento das capacidades ou das possibilidades, pois podemos desenvolver o nosso potencial. Quando falamos em autodesenvolvimento, estamos entendendo que o indivíduo assuma, ele mesmo, a responsabilidade por este processo evolutivo, através da busca pessoal de recursos e condições, que lhe permitam reconhecer que hoje está "melhor" (em qualquer aspecto) que ontem, e ter a certeza de que, amanhã, estará melhor que hoje.
+<br><br>
+Quando pensamos nos recursos para promover este autodesenvolvimento, estamos fundamentalmente considerando a educação e qualquer outra ação, que venha a contribuir para que o indivíduo gerencie a si mesmo!
+<br><br>
+No atual contexto das organizações, este tema acabou assumindo uma grande importância, pois o autodesenvolvimento tornou-se uma das mais importantes competências para o profissional do século XXI e dele dependerá o sucesso das pessoas e conseqüentemente das organizações. Só as organizações que tiverem pessoas que estejam absolutamente conscientes e focadas em seu autodesenvolvimento, serão capazes de responder rapidamente a mudanças tão aceleradas, adaptar-se à nova realidade tecnológica, e superarem os desafios, que garantam, mais do que a sobrevivência, o sucesso organizacional.
+<br><br>
+O autodesenvolvimento não se restringe apenas à "gestão da carreira". Este é um importante aspecto, mas existem outros que são preliminares e, por isto, mais genéricos. O processo de autodesenvolvimento engloba algumas etapas essenciais:
+<br><br>
+1. Fazer uma auto-análise <br>
+2. Buscar ajuda e participação de pessoas que possam contribuir para seu autodiagnóstico, através de feedbacks eficazes.<br>
+3. Definir os objetivos e métodos mais adequados para atingi-los.<br>
+4. Agir, porque não adianta ficar só na intenção; é preciso canalizar a energia e partir para ação.
+<br><br>
+A competência de autodesenvolvimento implica numa acentuada capacidade de estudar, numa curiosidade natural, que se manifesta por um interesse em descobrir e conhecer o mundo, na iniciativa, na persistência e automotivação e na disciplina. Todas estas características estão relacionadas ao desenvolvimento da nossa inteligência emocional, o que nos leva a constatar que esta é a base de todo o processo de autodesenvolvimento.
+Peter Drucker, em Desafios Gerenciais para o Século XXI, afirma que "gerenciar a si mesmo" significa colocar-se onde você possa fazer sua maior contribuição à sociedade; - aprender a se desenvolver constantemente, mantendo-se mentalmente ativo; e – aprender a como e quando mudar.
+<br><br>
+Na verdade, um ponto em que todos os gurus acabam concordando é que as pessoas que têm um autoconhecimento desenvolvido e que conseguem analisar as exigências do seu trabalho, de profissões de interesse e do mercado, podem ter maiores possibilidades de realização na carreira e na vida pessoal, pois encontram alternativas adequadas ao seu perfil e adaptam-se mais facilmente às mudanças trazidas pelas novas tecnologias.
+<br><br>
+Seguindo por esta linha de raciocínio, notamos que o autodesenvolvimento é uma questão estratégica na vida das pessoas, e que, no contexto de hoje, está relacionado ao sucesso individual e, por conseqüência, ao sucesso organizacional. Contudo, vamos nos deter agora nesta questão estratégica, ou seja, o nosso autodesenvolvimento tem de estar alinhado com a nossa missão, nossa visão, nossos valores, e no significado que damos ao trabalho em nossa vida.
+<br><br>
+Em sua obra, À procura de si próprio -Um guia para a Realização Pessoal, Barbara Braham afirma que somente quando compreendemos a nossa missão, conseguimos olhar para frente e "enxergar a nossa visão de futuro".
+<br><br>
+Segundo Joel Backer, um dos estudiosos sobre o futuro mais conhecido na atualidade, esta visão é um dos principais diferenciais entre pessoas, organizações e nações bem ou mal sucedidas. É esta visão, que compartilhada e posta em ação, pode mudar a vida das pessoas e, conseqüentemente, o mundo.
+<br><br>
+Nossa missão e nossa visão são norteadas por nossos valores. São os valores que permeiam as nossas escolhas em busca da realização pessoal. Precisamos ter clareza de nossos valores, pois são eles as nossas referências mais consistentes, que nos fazem buscar a coerência entre o discurso e as ações que empreendemos.
+<br><br>
+O significado do trabalho em nossa vida passou a ser importante nestas definições estratégicas, pois já que passamos mais de 1/3 de nossas vidas no trabalho e, como dissemos antes, em média vamos trabalhar 50 anos, temos que nos preocupar em mudar alguns paradigmas relacionados ao trabalho como "dever ou obrigação". Hoje algumas pessoas já começam a encarar o trabalho como fonte de prazer, buscando fazer aquilo que dê significado à sua vida e que esteja compatível com sua missão, seus valores, e sua visão de futuro.
+<br><br>
+No entanto, sabemos que dada a complexidade do SER HUMANO, muitas vezes, ele mesmo boicota estas realizações, utilizando "máscaras", como diz Barbara Braham na obra citada anteriormente. Precisamos tirar estas "máscaras" (a tirania do devo, a baixa auto-estima, o medo e outras) que nos distanciam de nós mesmos, que nos impedem de ver com mais clareza aquilo que somos e que desejamos. Tiradas estas máscaras conseguiremos caminhar no sentido de nossa auto-realização, que é a essência do sucesso pessoal e profissional.
+<br><br>
+À medida que entendemos o SER HUMANO como um SER HOLÍSTICO, não podemos separar a perspectiva pessoal da profissional. Muito se tem dito hoje sobre como a realização pessoal afeta a realização profissional, e vice-versa. Desta forma, pensar no significado do sucesso para o indivíduo é considerar o bom resultado, êxito ou triunfo (como diz o dicionário do Houaiss) de forma geral, ou seja, na vida. No entanto, sabemos que este é um assunto bastante complexo dada a sua subjetividade, pois o que é sucesso para um, pode não ser para outro, tendo em vista essencialmente os valores pessoais. Um dos principais questionamentos do SER HUMANO está relacionado ao como deve investir o seu tempo: para ganhar dinheiro ou para ser feliz? Uma pessoa mais focada no comportamento de SER, por considerar que TER é uma conseqüência, terá um entendimento diferente do que uma que está mais preocupada com o TER, por exemplo.
+<br><br>
+Por isso, pouco nos agregaria neste momento dar uma única definição do que seja sucesso, dada a singularidade do tema, mas podemos analisar que fatores podem nos levar ao "sucesso".
+<br><br>
+Diversos estudos sobre o tema convergem para a idéia da importância da Inteligência Emocional no sucesso das pessoas. Howard Gardner em seu estudo sobre Inteligências Múltiplas, já tinha feito referência a este aspecto, afirmando que muitas pessoas bem-sucedidas não tinham QI (Quociente de Inteligência) alto. A inteligência, como até então era entendida, pela perspectiva do raciocínio lógico-matemático-verbal, não era a principal característica de grandes expoentes nas mais diversas áreas do conhecimento humano.
+<br><br>
+Daniel Goleman afirma que a Inteligência Emocional (IE) permite fazer um prognóstico sólido para o sucesso de uma pessoa, pois 90% das diferenças entre executivos de desempenho excepcional e os de desempenho médio, estão relacionadas aos fatores relacionados à IE, e não às habilidades cognitivas adquiridas na escola. E, dos 5 fatores da IE, o que foi comum a todos foi a automotivação, decorrente das pessoas fazerem o que gostam.
+<br><br>
+A automotivação é um aspecto determinante na maneira como as pessoas lidam com o fracasso. E é impossível alcançar o sucesso se não soubermos enfrentar positivamente o seu oposto – o fracasso: entenda que o erro permite que você redirecione o caminho; coloque o foco em entender o PORQUÊ e não QUEM; use o erro como fonte de aprendizado e como medida para avaliar o seu crescimento.
+<br><br>
+Segundo uma pesquisa publicada na revista Fortune, as pessoas bem-sucedidas falharam em média 7 vezes, antes de se saírem bem.
+<br><br>
+Já existe algum acordo entre os diversos estudiosos do assunto, sobre algumas atitudes que diferenciam as pessoas de sucesso, tais como:<br>
+. Têm paixão pelo que fazem, colocam afeto nas coisas; <br>
+. Dedicam-se e são persistentes; <br>
+. Têm visão de futuro; <br>
+. São pró-ativas, assumem responsabilidades e correm "alguns" riscos; <br>
+. Têm uma visão positiva da vida e um "alto-astral" (leveza); <br>
+. Têm foco na qualidade de vida, fazem do presente os seus momentos felizes, usando bem o seu tempo e colocando toda a energia naquilo que é verdadeiramente significativo para elas; <br>
+. Aprendem com erros próprios e dos outros, não valorizam as situações negativas; <br>
+. São flexíveis e resilientes (capacidade de superar os limites); <br>
+. Têm facilidade para se relacionar e conviver; <br>
+. Desenvolvem o seu autoconhecimento, ele será a base do seu sucesso.<br><br>
+Um ponto importante a ser observado na relação das pessoas com o sucesso é a continuidade, pois, nem sempre, as pessoas agem no sentido de manter o sucesso conquistado, onde entra, mais uma vez, a importância do fator persistência: desistir jamais!<br><br>
+À medida que a empresa é uma integração de Seres Humanos, não há como não estabelecer uma correlação direta entre o sucesso pessoal/profissional com o sucesso da organização. Diversos gurus e estudiosos de gestão de empresas afirmam que pessoas felizes são mais produtivas, e vice-versa, gerando um ambiente mais positivo e têm melhores resultados – ou seja, geram lucro</h6><br><br></div> 
+</div>
+</section>
+   
+      </div>
+    </div>
+    <div class="section section-3">
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <section>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9783; Contos </h5></div>  
+<div id="mainnav">  		
+	<ol class='menu'>  			
+		<li><a data-tab="home" href="#home">Home</a></li>  			
+		<li><a data-tab="conto02" href="#conto02">Conto 02</a></li>
+		<li><a data-tab="conto03" href="#conto03">Conto 03</a></li>	
+		<li><a data-tab="conto04" href="#conto04">Conto 04</a></li>
+		<li><a data-tab="conto05" href="#conto05">Conto 05</a></li>
+		<li><a data-tab="conto06" href="#conto06">Conto 06</a></li>	
+		<li><a data-tab="conto07" href="#conto07">Conto 07</a></li>
+		<li><a data-tab="conto08" href="#conto08">Conto 08</a></li>
+		<li><a data-tab="conto09" href="#conto09">Conto 09</a></li>	
+		<li><a data-tab="conto10" href="#conto10">Conto 10</a></li>
+		<li><a data-tab="conto11" href="#conto11">Conto 11</a></li>	
+		<li><a data-tab="conto12" href="#conto12">Conto 12</a></li>
+		<li><a data-tab="conto13" href="#conto13">Conto 13</a></li>
+		<li><a data-tab="conto14" href="#conto14">Conto 14</a></li>	
+		<li><a data-tab="conto15" href="#conto15">Conto 15</a></li>
+	</ol>  	
+</div> <br><br>      
+  <div class="content__item" data-content="home">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	 			
+<h3>O RAPAZ E O ESPELHO</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Certo dia, um rapaz desiludido resolveu seguir o exemplo dos "contos da infância". Colocou-se frente ao seu espelho e perguntou:
+- Querido espelho, olhe para mim e me diga: Existe alguém mais infeliz do que eu?<br><br>
+- Com certeza, respondeu o espelho, existe alguém mais triste que tu neste momento. E este alguém sou eu.
+O rapaz olhou espantado. Não esperasse que um espelho falasse, e ainda contra ele. Mas o espelho prosseguiu:
+- Tu não imaginas a dor que eu sinto ao ver, no meu reflexo, uma pessoa que deixou seus problemas tomarem conta de sua vida, que não tem mais vontade de lutar e principalmente que não consegue ver dentro de si as suas qualidades suas capacidades, seu talento. Queria que estivesse no meu lugar pra ver.
+- Tu és uma pessoa tão inteligente, que fala para todos que tem um Deus, e tantas vezes falou do amor de Deus, agora se mostra tão derrotado. Deus é tão pequeno assim em tua vida para que tu te sintas tão inferior assim?<br><br>
+- É pena que tu não vejas através de mim toda a tua facilidade em lidar com as pessoas, o quanto é expressiva a tua voz e tua palavra, quanto teu coração é forte, e o quanto as pessoas te amam. Olhe para ti! Levanta essa cabeça, pois dificuldades todos temos, assim como todos guardam dentro de si algo especial para dar, a capacidade de tornar a própria vida prazerosa.
+Quantas são as pessoas que gostariam de ser como tu és: saudável, inteligente e com toda a vida pela frente! e no entanto, muitas delas são felizes e agradecem à Deus pelas suas vidas!
+Fez uma pausa e continuou desabafando:
+- Use a tua sensibilidade - ela é essencial para a vida. Motive-se: ao acordar pela manhã, pense algo do tipo: "hoje meu dia será produtivo, alegre e cheio de vida, pois tenho Deus comigo." . Faça isso com amor no coração e concentre em teus objetivos. De hoje em diante, quero ver outra imagem refletida em mim. Uma imagem de alegria interior.<br><br>
+***
+A vida é tão curta. Não percas tempo com os momentos ruins. Faça deles experiências positivas para continuar tua vida. Ser feliz depende de uma vida em comunhão com Deus e em harmonia contigo mesmo. O que vem depois disso, são apenas resultados.<br><br>
+Tua postura diante da vida determina o rumo a tomar.</h6> 			
+<br><br></div>
+
+<div class="content__item" data-content="conto02">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>DESAFIO</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Ouvi uma antiga parábola - deve ser muito antiga, porque naquela época Deus costumava morar na Terra...<br><br>
+Um dia um velho fazendeiro veio a Deus e disse:
+"Olha, você pode ser Deus e ter criado o mundo, mas preciso lhe dizer uma coisa: você não é fazendeiro, e não sabe nem o abc da agricultura. Você tem muito o que aprender."<br><br>
+Deus disse:
+"O que você sugere?"
+O fazendeiro respondeu:
+"Dê-me um ano e permita que as coisas sejam de acordo comigo, e veja o que acontece. Não haverá mais pobreza!"
+Deus concordou, e um ano foi dado ao fazendeiro. Naturalmente ele pediu o melhor, pensava somente no melhor - nada de trovões, nada de ventos fortes, nenhum perigo para a safra.Tudo confortável e aconchegante, e ele estava muito feliz. O milho estava crescendo tanto!<br><br>
+Quando queria sol, havia sol, quando queria chuva, havia chuva, o quanto quisesse. Nesse ano, tudo estava certo, matematicamente certo. O trigo crescendo tanto...
+O fazendeiro ia a Deus e dizia:
+"Olhe! Dessa vez a safra será tão grande, que por dez anos, mesmo que as pessoas não trabalhem, haverá comida suficiente!"
+Mas quando fizeram a colheita, não havia grãos. O fazendeiro ficou surpreso. Ele perguntou a Deus:
+"O que aconteceu, o que saiu errado?"
+Deus disse:
+"Por não existir nenhum desafio, nenhum conflito, nenhuma fricção, já que você evitou tudo de ruim, o trigo permaneceu impotente. Uma pequena fricção é uma necessidade. As tempestades são necessárias, os trovões e os raios são necessários. Eles agitam a alma dentro do trigo!"<br><br>
+Esta parábola tem um valor imenso.
+Se você for apenas feliz, e feliz, a felicidade perderá todo o sentido. Será como se alguém estivesse escrevendo com giz branco em uma parede branca - ele pode continuar a escrever, mas ninguém será capaz de ler. A noite é tão necessária quanto o dia. E os dias de tristeza são tão essenciais quanto os dias de felicidade. Isto eu chamo de compreensão. E lentamente, quanto mais você percebe o ritmo da dualidade, o ritmo da polaridade, você para de pedir, para de escolher. E você descobriu o segredo.<br><br>
+Viva com este segredo, e de repente ficará surpreso: Como as bênçãos da vida são imensas! O quanto é derramado sobre você a cada momento! Mas você tem vivido em suas expectativas, em seus pequenos, insignificantes desejos triviais, e porque as coisas não se ajustavam a seus desejos, você ficava infeliz.<br><br>
+Quando você segue a natureza das coisas, não existe nenhuma sombra. Então, mesmo a tristeza é luminosa. Não é que a tristeza não virá; ela virá, mas não será sua inimiga. Você a acolherá, porque verá sua necessidade. Você será capaz de ver sua graça, será capaz de ver porque ela está ali e porque é necessária. E sem ela você será menos, não mais.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto03">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>OS TRÊS LEÕEZINHOS</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Era uma vez, numa determinada floresta, uma leoa-mãe havia dado à luz três leõezinhos bem bonitinhos:  O Rax, o Rix e o Rex. Os três, travessos e peraltas, eram o orgulho da mamãe-leoa. Nessa fase de aprendizado, a cada dia que se passava, cada um fazia mil traquinagens e peripécias. Tudo transcorria bem até que um dia, o macaco, representante eleito dos animais súditos, malandro e puxa-saco, fez uma reunião com toda a bicharada da floresta e falou:<br><br>
+- Aí, galera ! Nós, os bichos, sabemos que o leão é o rei dos animais, mas paira uma dúvida no ar: existem três leõezinhos fortes que estão em crescimento. Ora, a qual deles deveremos prestar homenagem? Quem, dentre eles, quando crescer, deverá ser o nosso rei ?
+O Rax ?   O Rix ?  O Rex ?<br><br>
+Os três leõezinhos souberam da reunião e comentaram entre si:
+- É verdade, a preocupação da bicharada faz sentido. Uma floresta não pode ter três reis ! Assim, precisamos saber qual de nós será o escolhido. 
+Mas como descobrir ? Essa era a grande questão: lutar entre si eles não queriam, pois eram irmãos e muito amigos.<br><br>
+O impasse estava formado. De novo, todos os animais se reuniram para discutir uma solução para o caso. Depois de usarem técnicas avançadas de reuniões, gerenciamento de crises, etcétera e tal, eles tiveram uma ideia excelente. O macaco ficou encarregado de encontrar-se com os três felinos e contar o que a bicharada havia decidido:<br><br>
+- Bem, senhores leões, falou o macaco, encontramos uma solução desafiadora para o problema. A solução está na MONTANHA DIFÍCIL.
+- Montanha Difícil ? - Como assim ? Perguntaram os três leõezinhos.
+- É simples - ponderou o macaco,  decidimos que vocês três deverão escalar a Montanha Difícil. Quem primeiro atingir o pico será consagrado Rei dos Animais.<br><br>
+A Montanha Difícil era a mais alta entre todas as montanhas naquela imensa floresta. Cercada por um caudaloso rio, cujas águas turbulentas e profundas percorriam um perigoso despenhadeiro, a Montanha Difícil era o terror da bicharada. E o desafio foi aceito. No dia combinado milhares de animais cercaram a Montanha Difícil para assistir à grande escalada.<br><br>
+Rax, como era o primogênito, mais velho, foi o primeiro a tentar. Não conseguiu.  Foi derrotado. Rix, o segundo, também tentou. Caiu exausto. Foi derrotado. E chegou a vez de Rexzinho, o caçula, terceiro e mais novo. Tentou. E não conseguiu. Também foi derrotado. E rugiu:                                 Buáááá<br><br>
+E agora ? Afinal, qual deles seria o rei, uma vez que os três  foram derrotados ? Os animais estavam curiosos e impacientes para saber quem seria o novo rei;  e o macaco, esperto, achava que ficaria com a coroa.<br><br>
+Ledo engano. Foi nesse momento que uma sábia coruja, idosa na idade e grande em sabedoria, pediu a palavra:<br><br>
+- Eu sei quem deverá ser o rei!!!   
+Ao ouvirem aquilo, todos os animais fizeram um silêncio de grande expectativa.<br><br>
+- A senhora sabe ??? Mas como ???  -  gritaram todos em uníssono, olhando para a coruja de olhos amarelos que pousara em um galho.
+- É simples - confessou a sábia coruja - Eu fiquei voando entre eles,  bem de perto e só observando. Quando eles voltaram fracassados para o vale, eu escutei o que cada um deles disse de si para si e para a Montanha Difícil.<br><br>          
+O primeiro leão disse: - Montanha, você me venceu ! 
+O segundo leão disse: - Montanha, você me venceu! 
+O terceiro leãozinho, o Rexzinho, também disse: - Montanha, você me venceu ! Mas só por enquanto!  Você, montanha, já atingiu seu tamanho final, mas eu ainda estou em fase de crescimento e aprendizagem...<br><br>
+- A diferença, - completou a coruja, - é que o terceiro leãozinho teve uma atitude de vencedor diante da derrota, e quem pensa assim é maior que seu problema,  é rei de si mesmo, está preparado para reinar sobre os outros, e comandar.
+Os animais da floresta aplaudiram entusiasticamente ao terceiro leão, Rexzinho, o caçula, que então foi eleito e coroado rei dos animais.<br><br>
+MORAL DA HISTÓRIA:  Não importa o tamanho dos seus problemas ou das dificuldades que você tenha; seus problemas, pelo menos na maioria das vezes, já atingiram o clímax, e já estão no nível máximo, mas você não. Você ainda está crescendo. Você é maior que todos os seus problemas e dificuldades juntos. Você é jovem e ainda não chegou ao limite de seu potencial e performance. A Montanha das Dificuldades tem tamanho fixo, limitado. . . E, lembre-se daquele ditado:   "Não diga a Deus que você tem um grande problema, mas diga ao problema que você tem um GRANDE Deus."<br><br>
+Podemos inferir do texto, transpondo essa fábula para a vida prática, que os três leõezinhos podem ser, em uma  família humana, três irmãos, dos quais, geralmente espera-se que o mais velho venha a ser aquele sobre o qual recairão todas as expectativas dos pais; que venha a ser, na falta destes, o responsável pelos irmãos mais novos. Mas, ledo engano, às vezes poderá ser o mais novo (como no exemplo do patinho feio) quem irá vencer e ser o provedor. Pode ser o patinho feio, ou melhor, o leãozinho menor, o Rexzinho, quem irá projetar-se na vida prática, profissional e financeira. 
+Rex, em latim, significa REI. Portanto, o leãozinho-rei poderá ser você, leitor/a; a Montanha Difícil pode ser aquela prova difícil que você irá enfrentar na próxima semana, pode ser que seja o famigerado  vestibular em uma faculdade pública, pode ser que seja um concurso público no qual você se inscreveu e espera ansiosamente o resultado.  Considere que você ainda é jovem, está em franco desenvolvimento, ainda está estudando...  O macaco representa aquelas pessoas que torcem para ver você escorregar e cair na vida, para se dar mal e depois ficam falando: "viu, só ? eu sabia que ele ia reprovar..., eu sabia que ele não seria capaz...". Já a coruja, por sua vez, tipifica aquela pessoa verdadeiramente amiga, que lhe dá bons conselhos, torce pelo seu sucesso e acredita no seu potencial. A floresta simboliza o mundo desconhecido e ameaçador; as cachoeiras, os rios caudalosos, os penhascos  e despenhadeiros representam as adversidades pelas quais você terá que passar.  O pico é o limite, é o seu objetivo.
+ Leitor, leitora, veja qual o seu lugar nessa história e na vida. Sua vida está apenas começando.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto04">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>A RAPOSA E A CRIANÇA</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Existia um lenhador que acordava às seis horas da manhã e trabalhava o dia inteiro cortando lenha, e só parava tarde da noite. Esse lenhador tinha uma linda filhinha Ágatha, de 6 anos e uma raposa, sua amiga, a qual tratava como bicho de estimação e era de sua total confiança. Todos os dias o lenhador ia trabalhar e deixava a raposa brincando com sua filhinha. Todas as noites, ao retornar do trabalho, a raposa ficava feliz com sua chegada. Os vizinhos do lenhador, porém,  alertavam-no e diziam-lhe que a raposa era um bicho, um animal selvagem e,  portanto, não era confiável. Quando ela sentisse fome, devoraria a criança. O lenhador, sempre retrucando com os vizinhos, falava que isso era uma grande bobagem, que a raposa era sua amiga e jamais faria isso. Os vizinhos insistiam:
+- Lenhador, abra os olhos! A raposa vai devorar sua filhinha.  Quando sentir fome comerá sua filhinha!<br><br>
+Um dia o lenhador, muito exausto do trabalho e muito cansado desses comentários, ao chegar em casa, viu a raposa, abanando a cauda, feliz como sempre, saindo do quarto da criança e, próximo da porta um rastro de sangue. O animal tinha a boca totalmente ensanguentada. O lenhador tremeu, suou frio e, sem pensar duas vezes, acertou uma machadada na cabeça da raposa.
+Ao entrar no quarto, desesperado, encontrou sua filhinha no berço, dormindo tranquilamente, e ao lado do berço uma cobra gigante, morta. O lenhador enterrou o machado e a raposa juntos.  E chorou.  Chorou. Chorou muito.<br><br>
+MORAL DA HISTÓRIA:<br>
+Se você confia em alguém, não importa o que os outros pensam e dizem a respeito, siga sempre o seu caminho e não se deixe influenciar, mas principalmente seja astuto e nunca tome decisões precipitadas. A grandeza não consiste em receber honras, mas em merecê-las.  Quem vai pela cabeça dos outros é piolho. Não se deixe emprenhar pelos ouvidos.</h6><br><br></div>
+
+<div class="content__item" data-content="conto05">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>Águia ou Galinha?</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Certa vez um camponês encontrou, caído do ninho, um filhotinho de águia e resolveu criá-lo junto com suas galinhas para ver se ele se comportaria tal qual uma galinha.
+Tratava-o da mesma maneira que tratava as galinhas, de modo que ele pensasse que também era uma galinha. Dava a mesma ração jogada no chão, a mesma água num bebedouro rente ao solo, e fazia-o ciscar para complementar a alimentação, como se fosse uma galinha. E a águia cresceu e passou a se portar como se galinha fosse.<br><br>
+Certo dia, passou por sua casa um naturalista que, vendo a águia ciscando no chão, foi falar com o camponês:
+"Isto não é uma galinha, é uma águia!"
+O camponês retrucou:
+"Agora ela não é mais uma águia, agora ela é uma galinha!" 
+O naturalista disse:
+"Não, uma águia será sempre uma águia; vamos ver uma coisa..."
+Dito isso, levou-a para cima da casa do camponês e elevou-a nos braços e disse:
+"Voe, você é uma águia, assuma sua natureza!"
+Mas a águia não voou, e o camponês disse:
+"Eu não falei que ela agora era uma galinha?!"
+O naturalista disse:
+"Amanhã, veremos..."<br><br>
+No dia seguinte, logo de manhã, eles subiram até o alto de uma montanha. O naturalista levantou a águia e disse:
+"Águia, veja este horizonte, veja o sol lá em cima e os campos verdes lá em baixo, veja, todas estas nuvens podem ser suas. Desperte para sua natureza, e voe como águia que é..."
+A águia começou a ver tudo aquilo e foi ficando maravilhada com a beleza das coisas que nunca tinha visto; ficou um pouco confusa no início, sem entender o porquê de ter ficado tanto tempo alienada. Então, ela sentiu seu sangue de águia correr nas veias, perfilou devagar suas asas e partiu num vôo lindo, até que desapareceu no horizonte azul.<br><br>
+A águia é a ave que mais alto voa. É uma das mais velozes e a mais forte. Pode alcançar até 300 km/h e carregar até mesmo uma criança !  Contudo, ela não corre, não cisca, quase não anda, não nada e tampouco mergulha.  Especializou-se em voar e o faz com excelência !  O pato, por sua vez, parece mais versátil.  Afinal, voa, anda, corre, nada e mergulha, contudo é medíocre em todas as suas habilidades: voa lentamente, corre e anda de modo desajeitado, nada devagar como um pato e mergulha pouco.  Definitivamente não é um especialista.  Nada faz com exclusividade e excelência.<br><br>
+Assim é a vida - certos pais criam os filhos como se fossem galinhas, porém, eles são águias, pensam muito além. Por isso, todos podemos voar, se quisermos. Jovem, voe cada vez mais alto, não se contente com os grãos que lhe jogam para ciscar. Você é uma águia, e não tem que agir como galinha, como querem que haja, pois, com uma mentalidade de galinha, fica mais fácil controlar as pessoas, as quais abaixam a cabeça para tudo, com medo.
+Não seja um galinha.  Não fique ciscando.  Também não seja um pato.  Seja autêntico. Conduza sua vida de cabeça erguida, respeitando os outros, sim, mas com medo, JAMAIS.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto06">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>O CÃOZINHO E A ONÇA</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Um jovem de família muito rica certa vez foi à caça e levou consigo um cachorrinho dálmata para não se sentir tão só na mata e, também, ensiná-lo a caçar.<br><br>
+Um dia, já na expedição, o cachorrinho começa a brincar de caçar mariposas e quando se dá conta já está muito longe do grupo do seu dono.  Nisso vê que vem perto uma onça correndo em sua direção. Ao perceber que a onça iria devorá-lo, pensa rápido no que fazer. Vê uns ossos de um animal morto e se coloca a mordê-los.  
+Então, quando a onça estava a ponto de atacá-lo, o cachorrinho diz em voz alta:
+ "Ah, que delicia esta onça que acabei de comer!”
+A onça pára bruscamente e sai apavorada correndo do cachorrinho e vai pensando:<br><br>
+"Mas que cachorro bravo! Por pouco não come a mim também!..."
+Um macaco, fofoqueiro, que estava trepado em uma árvore perto e que havia visto a cena, sai correndo atrás da onça para lhe contar como ela foi enganada pelo cachorro.  Mas o cachorrinho percebe a manobra do macaco.  O macaco alcança a onça e lhe conta toda a história.  Então, a onça furiosa diz:  
+ "Cachorro malandro! Vai me pagar! Agora vamos ver quem come a quem!"<br><br>
+"Depressa!"  - Disse o macaco puxa-saco -   "Vamos alcançá-lo!"  
+E montou nas costas da onça.  E saíram correndo para caçar o cachorrinho. O cachorrinho vê que a onça vem atrás dele de novo e desta vez traz o macaco montado em suas costas, E pensa:
+"Ah, macaco safado! O que faço agora?"   
+ Pensou, pensou. . .<br><br>
+O cachorrinho, ao invés de sair correndo, fica de costas como se não estivesse vendo nada, e quando a onça estava a ponto de atacá-lo de novo, o cachorrinho diz em voz alta:
+"Cadê aquele macaco preguiçoso ? Faz meia hora que eu o mandei me trazer uma outra onça para eu comer e ele ainda não voltou! Quando ele voltar eu vou dar uma surra nele que até o diabo vai ter dó !"
+A onça, ao ouvir isso, com medo e com os pelos em pé, bateu em retirada.<br><br>
+MORAL DA HISTORIA:<br>
+"Em momentos de crise a imaginação é mais importante que o conhecimento"</h6><br><br></div> 
+
+<div class="content__item" data-content="conto07">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>O PARDAL</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Era uma vez um pardal cansado da vida.  Um dia, resolveu sair voando pelo mundo em busca de aventuras. Voou, voou, até chegar a  uma região extremamente fria. E como o frio era intenso suas asas foram ficando congeladas até não poder mais voar - e caiu na neve. Uma vaca, vendo o pobre pardal naquela situação, resolveu ajudá-lo e, para aquecê-lo, cagou em cima dele.  O pardal, ao sentir-se aquecido e confortável, começou a cantar. Um gato branquinho, bem fofinho, ouviu o seu canto e foi  até lá, retirou-o daquela merda.  <br><br> 
+Como é costume dos gatos, este brincou, brincou e brincou com o pobre passarinho; depois cravou-lhe as garras e o devorou.<br><br> 
+MORAL DA HISTÓRIA:<br>1 - Nem sempre aquele que caga
+em cima de você é seu inimigo;
+<br><br> 
+2 - Nem sempre quem tira você
+da merda e lhe sorri é seu amigo;
+<br><br> 
+3 - Desde que você se sinta quente
+e confortável, com saúde, mesmo que
+esteja na merda, mantenha o bico calado. Mesmo porque quem está na merda não canta.
+Pense bem antes de reclamar.
+<br><br> 
+OUTRAS<br>
+Cinco lições básicas pra você manter seu emprego:<br>
+Tempos difíceis e "bicudos" esses, não ?   Serviços todos encontram, mas emprego que é bom, tá difícil.  A seguir elenco cinco estórias (fábulas-parábolas) que lhe ensinarão a como manter  e até mesmo a conquistar um.<br><br> 
+Lição número um:<br> -  O urubu-rei ficava o dia todo sobre um galho bem alto de uma árvore sem nada o que fazer. Um coelho que todo dia passava por ali e via aquela cena perguntou ao urubu:  -  - "Posso sentar como você e ficar também o dia todo sem nada o que fazer ? O urubu respondeu:  - "Claro, por que não ? Sente-se aí."  Assim, o coelho sentou-se embaixo da árvore e ficou ali parado sem nada para fazer. Eis que subitamente aparece uma raposa que salta sobre o coelho e o devora.<br><br> 
+Moral da História:<br> Para ficar sentado sem fazer porcaria nenhuma, você precisa estar sentado muito alto.<br><br> 
+Lição número dois.<br> - Lá estava o peru batendo papo com o touro. ."Eu gostaria muito de ser capaz de chegar ao topo daquela árvore, mas não tenho forças." - suspirou o peru. - "Ora, por que você não come um pouco do meu esterco? Ele tem muitos nutrientes e vitaminas que lhe darão mais força e vigor." - Replicou o touro. O peru bicou um pedaço de esterco e constatou que realmente isso lhe dava a força necessária para chegar ao primeiro galho da árvore e assim no dia seguinte, depois de comer mais uns bons nacos de esterco, chegou ao segundo galho.<br><br> 
+Finalmente depois de duas semanas, comendo o esterco, ele estava orgulhosamente empoleirado no galho mais alto da árvore. Não se contendo de alegria, pomposamente bateu asas e soltou seu canto. Acontece que um caçador que passava por ali vendo a ave pomposa e cantando lá no alto da árvore não resistiu e ... Puumm.... Deu um tiro na pobre ave.  Moral da História: Qualquer bosta de emprego pode levar você ao topo, mas não manterá você lá por muito tempo ainda mais se você abrir o bico.<br><br> 
+Lição número três - (Essa é velha):<br>
+Quando o corpo foi criado, todas as partes queriam ser Chefe. O cérebro foi logo dizendo:
+- "Eu deveria ser o Chefe porque controlo todas as respostas e funções do corpo". 
+No que os pés prontamente disseram:
+- "Nós deveríamos ser o Chefe porque carregamos cérebro para onde ele quiser ir." 
+As mãos não demoraram a responder:
+- "Nós é que deveríamos ser o Chefe, porque fazemos todo trabalho e colocamos, literalmente, a mão no dinheiro". <br><br> 
+E assim foi, órgão por órgão se justificando do porque deveria ser o chefe até que um pum estrondoso interrompeu aquela discussão. Todos os outros órgãos riram do bumbum na sua pretensa vontade de assumir a chefia. E foi desta forma que ele entrou em greve, bloqueou-se e recusou-se a trabalhar. Em pouco tempo os olhos ficaram vesgos, as mãos crisparam, os pés se retorceram, o coração e os pulmões entraram em pânico e o cérebro mal conseguia raciocinar. Intestinos ficaram presos.  No final todos, concordaram. Todos os outros órgãos fizeram seu trabalho e o Chefe sentou e deixou a merda passar!<br><br> 
+Moral da História:<br> Você não precisa de cérebro para poder ser um Chefe, qualquer bundão pode ser. <br><br> 
+Lição número quatro:<br> -  Um empresário rico e bem sucedido descobrindo que estava com stress agudo decidiu procurar um lugar sossegado para passar alguns dias em repouso. Refugiou-se na fazenda de um amigo, para onde levou alguns livros e uma  infinidade de CDs e DVDs. Dois dias após ligou para o médico, informando que já lera todos os livros e assistira a todos os DVDs e CDs pelo menos três vezes, ao que foi aconselhado a procurar o capataz da fazenda e pedir um serviço simples, próprio dos peões. 
+<br><br> 
+Embora surpreso, o capataz determinou que o hóspede espalhasse um enorme monte de esterco por uma extensão de oito hectares de terra. No dia seguinte, o hóspede volta a procurar o capataz, informando que a tarefa fora realizada, para a surpresa do capataz, que admitiu que um peão levaria ao menos uma semana para tal.<br><br> 
+O capataz então entregou ao seu hóspede três cestas: uma pequena, uma média e uma grande, e determinou que o empresário se deslocasse até as laranjeiras e colhesse laranjas, colocando as grandes nos cestos grandes, as médias nos cestos médios, e as pequenas nos pequenos cestos. Uma semana depois, sentindo a falta do hóspede, o capataz foi até ao laranjal e encontrou o empresário olhando fixamente para uma laranja; os cestos vazios. Feliz com a chegada do capataz, o empresário disse:<br>
+- "Ainda bem que você chegou para me ajudar. Esta laranja é pequena, média ou grande???" <br><br> 
+Moral da História:<br> Espalhar merda é barbada. Difícil é tomar uma decisão. .  <br>
+Lição número cinco - a do pardal.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto08">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>A RÃ E A GARÇA</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Nunca desista . . Conta uma antiga lenda que na Idade Média um homem muito religioso foi injustamente acusado de ter assassinado uma mulher. Na verdade, o autor era pessoa influente do reino e por isso, desde o primeiro momento se procurou um "bode expiatório" para acobertar o verdadeiro assassino. O homem foi levado a julgamento, já temendo o resultado: a forca.<br><br> Ele sabia que tudo iria ser feito para condená-lo e que teria poucas chances de sair vivo dessa história. O juiz, que também estava combinado para levar o pobre homem à morte, simulou um julgamento justo, fazendo uma proposta ao acusado que provasse sua inocência. Disse o juiz: - Sou de uma profunda religiosidade e por isso vou deixar sua sorte nas mãos de Deus. Vou escrever num pedaço de papel a palavra INOCENTE e no outro pedaço a palavra CULPADO. Você sorteará um dos papéis e aquele que sair será o veredicto. O Senhor decidirá seu destino - determinou o juiz.
+<br><br>
+E sem que o acusado percebesse, o juiz preparou os dois papéis, mas em ambos pedaços o maldoso juiz escreveu: CULPADO de maneira que, naquele instante, não existia nenhuma chance do acusado se livrar da forca. Não havia saída. Não havia alternativas para o pobre homem.<br><br> O juiz colocou os dois papéis em uma mesa e mandou o acusado escolher um. O homem pensou alguns segundos e pressentindo um toque divino aproximou-se confiante da mesa, pegou um dos papéis e rapidamente o colocou na boca e engoliu. Os presentes ao julgamento reagiram surpresos e indignados com a atitude do homem, disseram: "- Mas o que você fez? E agora? Como vamos saber qual seu veredicto?" "<br><br>
+- É muito fácil -, respondeu o homem. - Basta olhar o outro pedaço que sobrou e saberemos que acabei engolindo o contrário.  Imediatamente o homem foi liberado.
+<br><br>
+MORAL DA HISTÓRIA: <br> Por mais difícil que seja uma situação, não deixe de acreditar até o último momento que você irá vencer. Saiba que para qualquer problema há sempre uma saída, não desista, não entregue os pontos, não se deixe derrotar. Persista, vá em frente apesar de tudo e de todos, creia que pode conseguir.
+<br><br>
+Lembra-me a espetacular luta do UFC 117 entre o curitibano Anderson "the Spider" Silva x o fanfarrão e falastrão americano Chael Sonnen - veja no youtube; a poucos segundos do final o curitibano venceu de forma espetacular. Mais tarde provou-se que o americano usara drogas naquele combate. Uma das mais espetaculares lutas da história - mesmo com uma costela trincada o curitibano foi à luta, apanhou muito e, venceu. Se você fizer o que sempre fez, conseguirá o que sempre quer !!! Use sua Força Divina, para superar suas limitações.</h6><br><br></div>
+
+<div class="content__item" data-content="conto09">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>O Devoto e a Prostituta</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Um homem muito praticante foi morar numa casa onde tinha por vizinha uma prostituta. Pouco tempo depois começou a aperceber-se do constante ir e vir dos homens que recorriam aos serviços da mulher. Escandalizado, começou a recriminar cruelmente a sua vizinha.<br><br>
+- "Malvada! Arrepende-te da tua conduta. Para que a cada dia que passa tenhas consciência dos teus actos horríveis, colocarei à tua porta uma pequena pedra por cada pecado que cometas".
+Dia após dia, aquele homem devoto foi colocando pequenas pedras à porta da sua vizinha. Vigiava dia e noite aquela mulher e contabilizava exactamente cada homem que ia visitá-la. Dessa maneira, em pouco tempo juntou-se um razoável monte de pedras à frente da sua porta.<br><br>
+A mulher chorava ao ver que o monte de pedras aumentava e o seu coração sofria. A vida tinha-a empurrado para aquela situação e ela era a primeira a lamentar-se.
+Uma noite, um terramoto destruiu a aldeia e morreram o devoto e a prostituta.<br><br>
+As almas dos sois foram levadas imediatamente diante dos juízes celestiais. Depois de passarem a vida de ambos e conhecendo os mais profundos segredos dos seus corações, sentenciaram:
+"Que a alma da mulher seja levada ao paraíso, e a do homem seja conduzida ao inferno!"<br><br>
+"Um momento!" - interveio o homem devoto. "Deve haver algum engano. Foi ela quem pecou incessantemente até à hora da morte. Ao contrário eu respeitei as regras da moral estabelecida."
+Os juízes olharam um para o outro sem darem qualquer crédito ao que estavam a ouvir e disseram:<br><br>
+"Não há nenhum erro. A alma da mulher está pura e o seu coração também. O seu corpo pecou, mas a vida levou-a para um destino que não pôde contrariar. Dia e noite rezava para poder sair dessa situação que muito a fazia sofrer. Tu, ao contrário, tens o coração cheio de ressentimento, culpa e juízo contra ela. Em vez de sentires generosidade e compaixão por ela, contribuiste para aumentar a sua humilhação e vergonha. Assim, que se cumpra a sentença!".</h6><br><br></div> 
+
+<div class="content__item" data-content="conto10">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>Depende de Nós</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Um dia, um jovem chegou a uma povoação à procura de uma casa e de emprego. Antes, porém, queria saber como eram os moradores daquela terra. Aproximou-se de um homem idoso e perguntou-lhe:<br><br>
+- Bom-dia! Como são os habitantes desta terra?
+O homem respondeu:
+- Antes de responder, gostava de saber como são as pessoas da terra, de onde vem.
+- As pessoas onde eu morava eram más, pessimistas, desumanas, antipáticas. Gente pior não existe - respondeu o jovem.
+- Pois bem, o meu amigo vai encontrar aqui a mesma espécie de gente- respondeu, por sua vez, o idoso.<br><br>
+Passados alguns dias, chegou um outro forasteiro àquela terra. Procurou também informações acerca das pessoas daquele lugar. Dirigiu-se ao mesmo velhinho e fez-lhe a mesma pergunta:
+- Que tal os habitantes desta terra?
+O velho sábio replicou:<br><br>
+- Primeiro conte-me alguma coisa da terra de onde vem.
+- É gente maravilhosa, hospitaleira, simpática. Parece uma boa família.
+- Pois bem, meu jovem, é esse o mesmo tipo de gente que irá encontrar aqui- respondeu com sabedoria o idoso.
+<br><br>
+MORAL DA HISTÓRIA:<br> Coloque dentro de você a idéia do sucesso. O primeiro requisito essencial a todo homem para encontrar vida digna de ser vivida é ter uma atitude mental positiva.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto11">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>A casa queimada</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Um certo homem saiu em uma viagem de avião.
+Era um homem temente a Deus, e sabia que Deus o protegeria.
+Durante a viagem, quando sobrevoavam o mar, um dos motores falhou e o piloto teve que fazer um pouso forçado no oceano.
+<BR><BR>
+Quase todos morreram, mas o homem conseguiu agarrar-se a alguma coisa que o conservou em cima da água.
+Ficou boiando à deriva, durante muito tempo, até que chegou a uma ilha não habitada.
+Ao chegar à praia, cansado, porém vivo, agradeceu a Deus por tê-lo salvo da morte.<BR><BR>
+Ele conseguiu se alimentar de peixes e ervas.
+Conseguiu derrubar algumas árvores e com muito esforço conseguiu construir uma casa para ele.
+Não era bem uma casa, mas um abrigo tosco, com paus e folhas. Porém significava proteção.<BR><BR>
+Ele ficou todo satisfeito e mais uma vez agradeceu a Deus, porque agora podia dormir sem medo dos animais selvagens que talvez pudessem existir na ilha.<BR><BR>
+Um dia ele estava pescando e, quando terminou, havia apanhado muitos peixes. Assim, com comida abundante, estava satisfeito com o resultado da pesca. Porém, ao voltar-se na direção de sua casa, qual não foi sua
+decepção ao vê-la toda incendiada. Ele se sentou em uma pedra, chorando e dizendo em prantos:<BR><BR>
+"Deus! Como é que o Senhor podia deixar isto acontecer comigo? O Senhor sabe que eu preciso muito desta casa para poder me abrigar, e o Senhor deixou minha casa se queimar todinha. Deus, o Senhor não tem pena de
+mim?"<BR><BR>
+Neste momento uma mão pousou no seu ombro e ele ouviu uma voz dizendo:
+"Vamos, rapaz?"<BR><BR>
+Ele se virou para ver quem lhe falava, e qual não foi sua
+surpresa quando viu à sua frente um marinheiro todo fardado e dizendo:<BR><BR>
+"Vamos rapaz, nós viemos buscá-lo".
+"Mas como é possível? Como vocês souberam que eu estava aqui?"
+"Ora, amigo! Vimos os seus sinais de fumaça pedindo socorro. O capitão ordenou que o navio parasse e me mandou vir buscá-lo naquele barco ali
+adiante."<BR><BR>
+Os dois entraram no barco e assim o homem foi para o navio que o levaria em segurança de volta para os seus entes queridos.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto12">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>Lascador de pedra</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Há muitos anos, vivia na China um jovem que ganhava o seu sustento quebrando pedras. Embora são e forte, o rapaz não estava contente com seu destino, e queixava-se noite e dia. 
+<br><br>
+Tanto blasfemou contra Deus, que seu anjo da guarda terminou aparecendo e lhe disse:<br>
+- Você tem saúde, e uma vida pela frente muitos jovens começam fazendo algo como você, por que vive reclamando? <br>
+- Deus foi injusto comigo, e não me deu oportunidade de crescer. 
+<br><br>
+Preocupado, o anjo foi a presença do Senhor, pedindo ajuda para que seu protegido não terminasse perdendo sua alma. <br>
+- Seja feita a tua vontade – disse o Senhor – A partir de agora tudo lhe será concedido. 
+<br><br>
+No dia seguinte, o rapaz quebrava pedras quando viu passar uma carruagem levando um nobre, coberto de jóias. Passando as mãos pelo rosto suarento e sujo ele disse com amargura: <br>
+- Por que não posso eu ser nobre também? Este é o meu destino! 
+Então seu Anjo murmurou: <br>
+- Sê-lo-ás! 
+<br><br>
+E ele transformou-se no dono de um palácio suntuoso, muitas terras e cercado de servidores. Costumava sair todos os dias com seu impressionante cortejo, e gostava de ver seus antigos companheiros alinhados à beira da rua, olhando-o com respeito. 
+<br><br>
+Numa destas tardes, o calor estava insuportável; mesmo debaixo de seu guarda-sol dourado e ele transpirava como no tempo em que lascava pedras. Deu-se então conta de que não era tão importante assim: acima dele havia príncipes, imperadores, e ainda mais alto que estes estava o sol, que não obedecia a ninguém – pois era o verdadeiro rei e falou: <br>
+- Ah, anjo meu! Por que não posso ser o sol? Este deve ser meu destino! 
+O Anjo escondendo sua tristeza diante de tanta ambição exclamou: <br>
+- Pois sê-lo-ás! <br><br>
+E logo o jovem rapaz foi sol, como era seu desejo. Enquanto brilhava no céu, admirado com seu gigantesco poder de amadurecer as colheitas, ou queimá-las a seu bel-prazer, um ponto negro começou a avançar ao seu encontro. A mancha escura foi crescendo ele reparou que era uma nuvem, estendendo-se a sua volta, e fazendo com que não mais pudesse ver a Terra e gritou: <br>
+- Anjo! A nuvem é mais forte do que o sol! Meu destino é ser nuvem!<br> 
+- Sê-lo-ás! - respondeu o anjo. 
+E assim foi transformado em nuvem, e achou que havia realizado o seu sonho:<br>
+- Sou poderoso! - gritava, escurecendo o sol. <br>
+- Sou invencível! - trovejava, perseguindo as ondas. <br><br>
+Mas, na costa deserta do oceano erguia-se uma imensa rocha de granito, tão velha como o mundo e ele achou que a rocha o desafiava, e desencadeou uma tempestade que o mundo nunca antes vira. <br><br>
+As ondas, enormes e furiosas, golpeavam a rocha, tentando arrancá-la do solo e atirá-la no fundo do mar. Mas, firme e impassível, a rocha continuava no seu lugar. Soluçando ele disse: <br>
+- Anjo! a rocha é mais forte que a nuvem! Meu destino é ser uma rocha! 
+E transformou-se na rocha.<br>
+- Quem poderá vencer-me agora? - perguntava a si mesmo. – Sou o mais poderoso do mundo!<br><br> 
+E assim se passaram vários anos, até que, certa manhã, sentiu uma lancetada aguda em suas entranhas de pedra, seguida de uma dor profunda, como se uma parte de seu corpo de granito estivesse sendo dilacerada.<br><br> 
+Logo ouviu golpes surdos, insistentes, e novamente a dor gigantesca. Louco de espanto gritou:<br>
+- Anjo, alguém está querendo me matar! Ele tem mais poder que eu, eu quero ser como ele! 
+Chorando exclamou o anjo: <br>
+- E sê-lo-ás! <br>
+E foi assim que ele voltou a lascar pedras. <br><br>
+Por que será que nunca estamos satisfeitos onde estamos? devemos aprender que temos exatamente aquilo que merecemos e confiar em Deus pois Êle conhece as nossas necessidades.</h6><br><br></div> 
+
+<div class="content__item" data-content="conto13">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>A atitude de um vencedor</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Numa determinada floresta havia 3 leões. Um dia o macaco, representante eleito dos animais súditos, fez uma reunião com toda a bicharada da floresta e disse: <br>
+- Nós, os animais, sabemos que o leão é o rei dos animais, mas há uma dúvida no ar: existem 3 leões fortes. Ora, a qual deles nós devemos prestar homenagem? Quem, dentre eles, deverá ser o nosso rei?
+<br><br>
+Os 3 leões souberam da reunião e comentaram entre si: <br>
+- É verdade, a preocupação da bicharada faz sentido, uma floresta não pode ter 3 reis, precisamos saber qual de nós será o escolhido. Mas como descobrir ?
+<br><br>
+Essa era a grande questão: lutar entre si eles não queriam, pois eram muito amigos. O impasse estava formado. De novo, todos os animais se reuniram para discutir uma solução para o caso. Depois de muito tempo eles tiveram uma idéia excelente.
+<br><br>
+O macaco se encontrou com os 3 felinos e contou o que eles decidiram: <br>
+- Bem, senhores leões, encontramos uma solução desafiadora para o problema. A solução está na Montanha Difícil.
+<br><br>
+- Montanha Difícil ? Como assim ?<br>
+- É simples, ponderou o macaco. Decidimos que vocês 3 deverão escalar a Montanha Difícil. O que atingir o pico primeiro será consagrado o rei dos reis.
+<br><br>
+A Montanha Difícil era a mais alta entre todas naquela imensa floresta. O desafio foi aceito. No dia combinado, milhares de animais cercaram a Montanha para assistir a grande escalada.
+<br><br>
+O primeiro tentou. Não conseguiu. Foi derrotado.<br>
+O segundo tentou. Não conseguiu. Foi derrotado.<br>
+O terceiro tentou. Não conseguiu. Foi derrotado.
+<br><br>
+Os animais estavam curiosos e impacientes, afinal, qual deles seria o rei, uma vez que os 3 foram derrotados ? Foi nesse momento que uma águia sábia, idosa na idade e grande em sabedoria, pediu a palavra: <br>
+- Eu sei quem deve ser o rei. Todos os animais fizeram um silêncio de grande expectativa.
+<br><br>
+Todos gritaram para a Águia:<br>
+- A senhora sabe, mas como sabe?<br>
+- É simples... eu estava voando entre eles, bem de perto e, quando eles voltaram fracassados para o vale, eu escutei o que cada um deles disse para a montanha. <br>
+O primeiro leão disse:<br>
+- Montanha, você me venceu!<br>
+O segundo leão disse:<br>
+- Montanha, você me venceu!
+<br><br>
+O terceiro leão também disse que foi vencido, mas, com uma diferença. Ele olhou para sua dificuldade e disse:<br>
+- Montanha, você me venceu, por enquanto! mas você, montanha, já atingiu seu tamanho final, e eu ainda estou crescendo. 
+E calmamente a águia completou:<br>
+- A diferença é que o terceiro leão teve uma atitude de vencedor diante da derrota e quem pensa assim é maior que seu problema: é rei de si mesmo, está preparado para ser rei dos outros!
+<br><br>
+Os animais da floresta aplaudiram entusiasticamente ao terceiro leão que foi coroado rei entre os reis.</h6><br><br></div>
+
+<div class="content__item" data-content="conto14">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>Limites</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Qual o seu limite para sonhar e realizar objetivos em sua vida? 
+Nenhum.<br>
+O limite é você quem impõe.
+<br><br>
+Você é a única pessoa que pode colocar restrições nos seus desejos.
+Veja que as grandes realizações do nosso século aconteceram quando alguém resolveu vencer o impossível...<br>
+Nas navegações, encontramos um Colombo determinado a seguir viagens pelo mar, mesmo estando cansado de ouvir que o mar acabava e estava cheio de monstros terríveis.<br><br>
+Santos Dumont, foi taxado de louco tantas vezes que nem mais ligava para os comentários, até fazer subir seu 14 Bis...
+<br><br>
+Ford foi ignorado por banqueiros e poderosos que não acreditavam em carros em série. 
+Einstein foi ridicularizado na Alemanha... Desistir de nossos projetos, ou aceitar palpites infelizes em nossas vidas é mais fácil do que lutar por eles.<br><br>
+Renunciar, chorar, aceitar a derrota é mais simples pelo simples fato de que não nos obriga ao trabalho.<br>
+E ser feliz, dá trabalho.<br>
+Ser feliz é questão de persistência, de lutas diárias, de encantos e desencantos.<br>
+Quantas pessoas passaram pela sua vida e te magoaram ???<br>
+Quantos passarão pela sua vida só para roubar tua energia ???<br>
+Quantos estarão realmente preocupados com você???<br>
+A questão é como você vai encarar essas situações.<br>
+Como ficarão seus projetos...eles resistirão as amarguras e desacertos do dia a dia???<br>
+O objetivo você já tem: ser feliz !!!<br>
+Como alcançar você já sabe: lutando !!!<br>
+Resta saber o quanto feliz você realmente quer ser.<br>
+E principalmente; qual o limite que você colocou em seus sonhos.<br>
+Lembre-se: não há limites para sonhar...<br>
+Não se limite, vá a luta!<br>
+O impossível é apenas algo que alguém ainda não realizou !!!<br>
+E sempre Sorria !!!</h6><br><br></div> 
+
+<div class="content__item" data-content="conto15">
+<img class="imagefloat" src="https://hypescience.com/wp-content/uploads/2016/01/contos-de-fadas.jpg" alt="" width="200" height="200" border="0">	  			
+<h3>Maneiras de dizer as coisas</h3>  			
+<h6 class='p2' style='text-align:justify; margin-left:10px;'>Uma sábia e conhecida anedota árabe diz que, certa feita, um sultão sonhou que havia perdido todos os dentes. Logo que despertou, mandou chamar um adivinho para que interpretasse seu sonho.
+<br><br>
+- Que desgraça, senhor! Exclamou o adivinho. Cada dente caído representa a perda de um parente de vossa majestade.<br>
+- Mas que insolente _ gritou o sultão, enfurecido. Como te atreves a dizer-me semelhante coisa? Fora daqui!
+<br><br>
+Chamou os guardas e ordenou que lhe dessem cem acoites. Mandou que trouxessem outro adivinho e lhe contou sobre o sonho.
+Este, após ouvir o sultão com atenção, disse-lhe:<br>
+- Excelso senhor! Grande felicidade vos esta reservada. O sonho significa que haveis de sobreviver a todos os vossos parentes.
+<br><br>
+A fisionomia do sultão iluminou-se num sorriso, e ele mandou dar cem moedas de ouro ao segundo adivinho. E quando este saia do palácio, um dos cortesãos lhe disse admirado:<br>
+- Não é possível! A interpretação que você fez foi a mesma que o seu colega havia feito. Não entendo porque ao primeiro ele pagou com cem acoites e a você com cem moedas de ouro.
+<br><br>
+- Lembra-te meu amigo - respondeu o adivinho - que tudo depende da maneira de dizer...
+<br><br>
+Um dos grandes desafios da humanidade e aprender a arte de comunicar-se. Da comunicação depende, muitas vezes, a felicidade ou a desgraça, a paz ou a guerra.
+<br><br>
+Que a verdade deve ser dita em qualquer situação, não resta duvida. Mas a forma com que ela e comunicada e que tem provocado, em alguns casos, grandes problemas.A verdade pode ser comparada a uma pedra preciosa. Se a lançarmos no rosto de alguém pode ferir, provocando dor e revolta. Mas se a envolvemos em delicada embalagem e a oferecemos com ternura, certamente será aceita com facilidade.
+<br><br>
+A embalagem, nesse caso, é a indulgencia, o carinho, a compreensão e, acima de tudo, a vontade sincera de ajudar a pessoa a quem nos dirigimos.<br><br>
+Ademais, será sábio de nossa parte se antes de dizer aos outros o que julgamos ser uma verdade, dize-la a nós mesmos diante do espelho.<br><br>
+E, conforme seja a nossa reação, podemos seguir em frente ou deixar de lado o nosso intento. Importante mesmo, é ter sempre em mente que o que fará diferença e a maneira de dizer as coisas...</h6><br><br></div>
+</div>
+</section>
+      </div>
+    </div>
+    <div class="section section-4">
+<div class="modal" id="modal1"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLaW_NSM_5c1JVBh57f80NXpziSGZbqwu_" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal2"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLhTWjMvh4-gWoSMsWJaKcpjyY_AqZ4CDd" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal3"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLhPfBpTj6VpT1lPC_dGwj1Zip_4dQQP_c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal4"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLOCvbe7RB9fZMMtLM5IP-1oBVxjYownyc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal5"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLST1v4Btlk9pkgiwadzlp0buQYOri5jFN" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal6"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLAie3YzOYRmlNFK7bE7_WppF7QCcOrQ0M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal7"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/videoseries?list=PLAie3YzOYRmkIuEDUwyNmx1THFI7ouQHZ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="modal" id="modal8"> 
+<div class="modal-content"> 
+<span class="modal-close">&times;</span>
+<iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/0tkiYbeUPLA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9783; English Practice </h5> <hr></div><br>
+<table border="0" cellspacing="0" cellpadding="0" style='width:100%; height:33vh;'>
+<th><a data-modal-target="modal1"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-PsTsRswoAAk/YBhTXsbeqcI/AAAAAAAAJ34/_jYSrJcCDRQTBXU5pNrC9xTYOEyOS-hxgCLcBGAsYHQ/s0/Doug.jpg); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal2"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-FMbKyn-g0D8/YBhS--lobjI/AAAAAAAAJ3w/Pe5VX3CHI8owdZTzq9SZjwnYgzhAgWXOACLcBGAsYHQ/s0/s592.jpg); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal3"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-8fp-nVKdU3E/YBhT7UxlH8I/AAAAAAAAJ4I/3G6o-njkdJcHb1YCLqxDSZAtAF5rO2w5ACLcBGAsYHQ/s0/unnamed.png); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal4"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-xg3Udrb62cQ/YBhTm6XRBhI/AAAAAAAAJ38/lchqifEDn0g2zTgRPAmHnpypEnvfibXpQCLcBGAsYHQ/s0/71V6%252Bl-F2rL.jpg); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+</table><br>
+
+<table border="0" cellspacing="0" cellpadding="0" style='width:100%; height:33vh;'>
+<th><a data-modal-target="modal5"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-G7e66GWnofg/YBhUWHTVAOI/AAAAAAAAJ4Q/A4kZzvEd5I4rOUk859DhGnKkXRMXki4WQCLcBGAsYHQ/s0/unname.png); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal6"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-G7e66GWnofg/YBhUWHTVAOI/AAAAAAAAJ4Q/A4kZzvEd5I4rOUk859DhGnKkXRMXki4WQCLcBGAsYHQ/s0/unname.png); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal7"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-G7e66GWnofg/YBhUWHTVAOI/AAAAAAAAJ4Q/A4kZzvEd5I4rOUk859DhGnKkXRMXki4WQCLcBGAsYHQ/s0/unname.png); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+<th><a data-modal-target="modal8"><div id='pop' style='width:90%; height:28vh; background:url(https://1.bp.blogspot.com/-x_tjrkaDsvM/YBhV03acFoI/AAAAAAAAJ40/g4yf3HHLlL0bU2CI6iDnf1yQ0d9KYgSwACLcBGAsYHQ/s0/maxresdefault%2B%25284%2529.jpg); background-size:100% 100%; border-radius:; border:1px solid white; box-shadow:0 0 5px 2px black;'></div></a></th>
+</table><br><br>
+</div>
+     
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+      const modalTriggerButtons = document.querySelectorAll("[data-modal-target]");
+const modals = document.querySelectorAll(".modal");
+const modalCloseButtons = document.querySelectorAll(".modal-close");
+
+modalTriggerButtons.forEach(elem => {
+  elem.addEventListener("click", event => toggleModal(event.currentTarget.getAttribute("data-modal-target")));
+});
+modalCloseButtons.forEach(elem => {
+  elem.addEventListener("click", event => toggleModal(event.currentTarget.closest(".modal").id));
+});
+modals.forEach(elem => {
+  elem.addEventListener("click", event => {
+    if (event.currentTarget === event.target) toggleModal(event.currentTarget.id);
+  });
+});
+
+// Maybe also close with "Esc"...
+document.addEventListener("keydown", event => {
+  if (event.keyCode === 27 && document.querySelector(".modal.modal-show")) {
+    toggleModal(document.querySelector(".modal.modal-show").id);
+  }
+});
+
+function toggleModal(modalId) {
+  const modal = document.getElementById(modalId);
+
+  if (getComputedStyle(modal).display === "flex") {// alternatively: if(modal.classList.contains("modal-show"))
+    modal.classList.add("modal-hide");
+    setTimeout(() => {
+      document.body.style.overflow = "initial"; // Optional: in order to enable/disable page scrolling while modal is hidden/shown - in this case: "initial" <=> "visible"
+      modal.classList.remove("modal-show", "modal-hide");
+      modal.style.display = "none";
+    }, 200);
+  } else
+  {
+    document.body.style.overflow = "hidden"; // Optional: in order to enable/disable page scrolling while modal is hidden/shown
+    modal.style.display = "flex";
+    modal.classList.add("modal-show");
+  }
+}
+      //# sourceURL=pen.js
+    </script>     
+        
+      </div>
+    </div>
+    <div class="section section-5">
+<div id="teste" class="modal-resenha">
+  <div>
+    <a href="#modal-close" title="Close" class="modal-close">&times;</a>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y4OzR-oPNDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>   
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="section-heading" style='background:url(https://s1.1zoom.me/big0/624/Scenery_Sky_Grasslands_455864.jpg); background-size:100% 100%; opacity:.7;'>
+        <div id="header" title="sitename"><h5>&#9783; Virgem</h5> <hr></div><br>
+        <img class="imagefloat" src="https://static.vecteezy.com/ti/vetor-gratis/p1/624463-virgo-do-sinal-do-zodiaco-como-uma-menina-bonita-a-constelacao-de-virgem-ceu-noturno-horoscopo-astrologia-vetor.jpg" alt="" width="200" height="200" border="0">	  			
+        <h3>CARACTERÍSTICAS DO SIGNO DE VIRGEM</h3> 
+        <h6 class='p2' style='text-align:justify; margin-left:10px; background:url(); padding:20px; opacity:;'>Entre as características de Virgem, é comum que se cite seu desejo de ordem e limpeza. Os virginianos costumam ser bastante organizados e desejam que todos a seu redor também o sejam. Detestam bagunça, sujeira e desorganização. Abominam má-educação e falta de modos. De maneira geral, são corteses.
+Os virginianos costumam também ser bastante observadores, detalhistas e perfeccionistas. Geralmente possuem grande capacidade de análise e são bastante práticos. Interessam-se por cuidados com a saúde e são conselheiros sensatos<br><br>
+Os nativos de Virgem tendem a ser sérios, esforçados e tradicionalistas. Quando fazem algo, dedicam-se por inteiro à tarefa. É comum também que sejam pessoas generosas e amigos leais. Possuem fortes interesses humanitários.
+É comum que os nativos de Virgem deem muito valor à cultura, nutram vigorosa curiosidade intelectual e desprezem o que é supérfluo. Além disso, os virginianos possuem posições firmes e se recusam a fazer aquilo que não querem. De modo geral, usam do jogo de cintura para evitar situações constrangedoras ou para escapar delas. Detestam discussões e confusões e gostam de manter a paz. Concentram-se no que é importante para eles, deixando de lado o que consideram pouco importante. Costumam ser hábeis comunicadores. Geralmente, os nativos de Virgem são pessoas discretas.<br><br>
+</h6> 
+
+<center><h3>DEFEITOS DOS VIRGINIANOS</h3></center>
+<h6 class='p2' style='text-align:justify; margin-left:10px; background:url(); padding:20px; opacity:;'>Infelizmente, não há signo do Zodíaco destituído de defeitos. Virgem também possui os seus, alguns dos quais mencionaremos agora.
+Como explicado acima, Virgem é um signo ligado à ordem e à limpeza. Os virginianos, talvez por causa de seu espírito ordeiro e metódico, costumam ser muito críticos de si mesmos e dos outros. Isso afasta algumas pessoas que não conseguem conviver com as críticas dos virginianos. Além disso, eles tendem a mudar as pessoas, tentando fazer com que todos com quem convivem se enquadrem em seus ideais de ordem e perfeição. Além de críticos, os virginianos geralmente são bastante avaros quando se trata de elogiar as pessoas. Tudo isso pode introduzir grandes tensões na convivência com os outros indivíduos.
+Os nativos de Virgem tendem a se concentrar muito no trabalho e a ter pouco tempo para diversões.<br><br> Somado a uma certa distância que eles cultivam das pessoas que as cercam, isso faz com que tenham certa dificuldade para fazer amigos, apesar do caráter generoso e leal que costumam possuir.
+Como exigem muito de si mesmos, os virginianos podem ser mais propensos a sofrer de stress. A eterna busca pela perfeição tem um alto preço psicológico. Além disso, nem sempre lidam bem com seu lado emocional, que nem sempre se encaixa na visão de mundo disciplinada e ordeira que eles possuem.
+Diferente do que acontece, por exemplo, com os leoninos, os virginianos, com sua discrição natural, não gostam de ser o centro das atenções. Muitos deles são até tímidos. É comum que tenham dificuldades para pedir ajuda ou para criar parcerias.<br><br>
+</h6>
+
+<center><h3>COMO OS VIRGINIANOS SE RELACIONAM COM AS OUTRAS PESSOAS</h3></center>
+<h6 class='p2' style='text-align:justify; margin-left:10px; background:url(); padding:20px; opacity:;'>Como já mencionamos acima, o signo de Virgem tem um perfil que pode dificultar a aproximação das pessoas, devido à sua frieza e a distância que cultiva dos outros, e pode afastá-las devido a seu foco em assuntos práticos e a seu espírito crítico. Discretos e reservados, dificilmente os nativos de Virgem se abrem. Apesar disso, os virginianos são bons amigos e leais.
+Apresenta o signo Virgem características que podem interferir na vida romântica. A frieza e o distanciamento tornam difícil conquistar o virginiano. Trata-se uma tarefa que exige paciência, que nem todos possuem. <br><br>Os virginianos tendem a ser um pouco controladores e a tentar impor sua abordagem baseada em regras e ordem aos relacionamentos de que fazem parte. Parecem ter uma ideia na cabeça do que constitui um relacionamento-padrão e não gostam de se desviar dessa ideia.
+No sexo, como em outras atividades, as pessoas de Virgem tentam fazer o melhor possível e se informar sobre a melhor maneira de realizar aquilo que desejam. Apesar do que o comportamento reservado deles às vezes faça parecer, os virginianos gostam, sim, de sexo, mesmo que nem sempre deixem isso claro. Quanto maior a intimidade entre o nativo de Virgem e seu parceiro, melhor fica a relação sexual.<br><br>
+</h6>        
+        </div>
+      </div>
+    </div>
+    <div class="section section-6">
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="section-heading" style='background:url(https://1.bp.blogspot.com/-l3YjcNA7E1o/XgjZCvzKVDI/AAAAAAAAJPk/zMZ8jnBiI0gUexCLzcC27KddmLoUQgmIgCLcBGAsYHQ/s1600/45.jpg); background-size:100% 100%; opacity:.8;'>
+        <div id="header" title="sitename"><h5>&#9783; O trabalho da borboleta</h5> <hr></div><br>
+        <img class="imagefloat" src="https://4.bp.blogspot.com/--DWLyjxtgv4/WBEXgZ8DGkI/AAAAAAAACCg/cxJfIrYY2IoNy2smyAffJefGU0jDKiSQQCK4B/s1600/final%2Btest.jpg" alt="" width="200" height="200" border="0">	  			
+        <h3>A longa lista de desafios...</h3> 
+        <h6 class='p2' style='text-align:justify; margin-left:10px; background:url(); padding:20px; opacity:;'>"Um dia, uma pequena abertura apareceu em um casulo, um homem sentou e observou a borboleta por várias horas conforme ela se esforçava para fazer com que seu corpo passasse através daquele pequeno buraco. Então pareceu que ela parou de fazer qualquer progresso.<br><br>
+Parecia que ela tinha ido o mais longe que podia, e não conseguia ir mais longe. Então o homem decidiu ajudar a borboleta, ele pegou uma tesoura e cortou o restante do casulo. A borboleta então saiu facilmente. Mas seu corpo estava murcho e era pequeno e tinha as asas amassadas.<br><br>
+O homem continuou a observar a borboleta porque ele esperava que, a qualquer momento, as asas dela se abrissem e esticassem para serem capazes de suportar o corpo, que iria se afirmar a tempo. Nada aconteceu!
+Na verdade, a borboleta passou o resto da sua vida rastejando com um corpo murcho e asas encolhidas. Ela nunca foi capaz de voar.<br><br>
+O que o homem, em sua gentileza e vontade de ajudar, não compreendia era que o casulo apertado e o esforço necessário à borboleta para passar através da pequena abertura era o modo com que Deus fazia com que o fluido do corpo da borboleta fosse para as suas asas de modo que ela estaria pronta para voar uma vez que estivesse livre do casulo.<br><br>
+Algumas vezes, o esforço é justamente o que precisamos em nossa vida. Se Deus nos permitisse passar através de nossas vidas sem quaisquer obstáculos, ele nos deixaria aleijados. Nós não iríamos ser tão fortes como poderíamos ter sido. Nós nunca poderíamos voar.<br><br>
+Eu pedi Força...e Deus me deu Dificuldades para me fazer forte.<br>
+Eu pedi Sabedoria...e Deus me deu Problemas para resolver.<br>
+Eu pedi Prosperidade...e Deus me deu Cérebro e Músculos para trabalhar.<br>
+Eu pedi Coragem... e Deus me deu Perigo para superar.<br>
+Eu pedi Amor... e Deus me deu pessoas com Problemas para ajudar.<br>
+Eu pedi Favores... e Deus me deu Oportunidades.<br>
+Eu não recebi nada do que pedi... Mas eu recebi tudo de que precisava."<br><br></h6>
+        
+        </div>
+      </div>
+    </div>
+    <div class="section section-7">
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9783; Coleção Friends</h5> <hr></div><br><center />
+
+<img class="imagefloat2" src="https://1.bp.blogspot.com/-EiMHARH-_Ho/YAbxMP_u-RI/AAAAAAAAJyg/cQh2Oc2l1A8VHAluj88H0bNclEw0OwyCACLcBGAsYHQ/s0/D_NQ_NP_659767-MLB41284524448_032020-W.jpg" alt="" width="250" height="250" border="0">	
+<p style='text-align:justify; margin-left:10px;'>
+Formato do seriado: Mídia digital<br>
+Temporadas: 10<br>
+Episódios: 236<br>
+Idioma: Inglês<br>
+Legenda: Inglês (opcional)<br>
+Requisito: Inglês avançado<br>
+Extras: Tutorial completo explicando o passo a passo de como chegar a fluência em inglês assistindo séries.<br>
+Preço: R$ 95,00</p><br><br>
+<iframe style='width:75%; height:40vh; border:2px solid black;' src="https://www.youtube.com/embed/O6Iiy_YOe4Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br><br>       
+        
+   </div>
+      </div>
+    </div>
+    <div class="section section-8">
+      <div class="left-part"></div>
+      <div class="content">
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="bg-part"></div>
+        <div class="section-heading">
+        <div id="header" title="sitename"><h5>&#9783; Promoter </h5> <hr></div><br><center />
+<table width="200" height="150" border="0" style="background:url(https://1.bp.blogspot.com/-5t9AkAh62NE/YAM9Wnqyu8I/AAAAAAAAJwE/TxEkZSHOPsodSwSWaV8taqfu6uXQrjUSwCLcBGAsYHQ/s0/logo1_13_21276.png); background-size:100% 100%; border-radius:5px;" cellspacing="2" cellpadding="10"><th></th></table><br><br>
+<h3>ANUNCIE AQUI<br>
+acconstancia@gmail.com</h3><br><br>
+
+<table bgcolor="white" cellspacing="15" cellpadding="0" width='100%' border='0'>
+<td width='25%'><center /><a href="https://www.highschool.ml" target="_blank">
+<table style="background:url(https://1.bp.blogspot.com/-5nl_J2iSEoc/YF3_SOttBWI/AAAAAAAAKEM/rwqMB8Uw5ZcrTNnS6FIpI1Ue1dkdy-u-wCLcBGAsYHQ/s0/poster_2021-03-23-101014.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'><center /><a href="https://www.virtualstudio.ga" target="_blank">
+<table style="background:url(https://1.bp.blogspot.com/--N-wKkVq6q0/YFtY0_cC6oI/AAAAAAAAKDM/rPkmLwki_d4O-4fiQbVO3zI9ivnWO3FygCLcBGAsYHQ/s0/poster_2021-03-23-102107.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'><center /><a href="https://www.x3studio.cf" target="_blank">
+<table style="background:url(https://1.bp.blogspot.com/-j9e1z73C9Qs/YFtdD_iAJAI/AAAAAAAAKDw/LkE8HIrZRBkTyjk64KV7gvLv6QVseIrVACLcBGAsYHQ/s0/logo3_24_91541.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'><center /><a href="https://www.centraldecurriculos.cf" target="_blank">
+<table style="background:url(https://1.bp.blogspot.com/-RVzsFHzJCzQ/YEZBL7656AI/AAAAAAAAKAo/iMRGi6WS0bMYJOmHiTyRb6x2sc4gkD1ewCLcBGAsYHQ/s0/flyerdesign_06032021_160355.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td> </table>
+<br><br><br><br>
+
+<table bgcolor="white" cellspacing="15" cellpadding="0" width='100%' border='0'>
+<td width='25%'  style=''><a href="https://go.hotmart.com/N46152253Y" target="_blank">
+<table style="background:url(https://miro.medium.com/max/1440/1*axJgCbrlJ0XT0YOxDyjG9Q.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'><center /><a href="https://go.hotmart.com/W46150979K" target="_blank">
+<table style="background:url(https://emagrecernos30.com/wp-content/uploads/2020/05/250x250.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'  style=''><a href="https://go.hotmart.com/I46152832E" target="_blank">
+<table style="background:url(https://1.bp.blogspot.com/-1JnofnrmJbg/WphMQn159LI/AAAAAAAAA8k/ORcGrrvzutoGybh-dRuZmMgtY1-BaKw1wCLcBGAs/s1600/02.jpg); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'  style=''><a href="https://go.hotmart.com/A46153108O" target="_blank">
+<table style="background:url(https://hotmart.s3.amazonaws.com/product_pictures/2e150f34-5e9c-445c-ad28-e9691633402c/cursohotmart.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td> </table>
+<br><br><br><br> 
+  
+<table bgcolor="white" cellspacing="15" cellpadding="0" width='100%' border='0'>
+<td width='25%'  style=''><a href="https://go.hotmart.com/C46153348R" target="_blank">
+<table style="background:url(https://webhot.com.br/wp-content/uploads/2020/12/Lash-Expert-em-21-dias.jpg); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'><center /><a href="https://go.hotmart.com/R46151712J" target="_blank">
+<table style="background:url(https://afiliados.cursodeunhasdegel.com/wp-content/uploads/2020/12/alongamento-de-unhas.png); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td><td width='25%'  style=''><a href="https://go.hotmart.com/C46153650D" target="_blank">
+<table style="background:url(https://www.comprasdigitais.com.br/wp-content/uploads/2020/02/Curso-Mestres-do-Bitcoin-1.jpg); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td>
+<td width='25%'  style=''><a href="https://go.hotmart.com/I46154517D" target="_blank">
+<table style="background:url(https://www.mrvirtus.com.br/wp-content/uploads/2020/08/barbeiro.jpeg); border:1px solid white; box-shadow:0 0 5px 2px black; background-size:100% 100%;" width='90%' height=250><td></td></table></a></td> </table>
+<br><br><br><br>       
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="scroll-down">Scroll down</h2>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script id="rendered-js" >
+'use strict';
+// Abandon all hope ye who enter here
+$(document).ready(function () {
+
+  var navigating = false,
+  curPage = 1,
+  pages = $(".section").length,
+  $sections = $(".sections"),
+  $paginationPage = $(".pagination .page"),
+  $paginationTotal = $(".total-pages"),
+  $textStuff = $(".section-heading, .additional-text");
+
+  if (pages >= 10) {
+    $paginationTotal.text(pages);
+  } else {
+    $paginationTotal.text("0" + pages);
+  }
+
+  /*
+  Sets random transition-delay for blocks between 0.4 and 1.2 seconds on every call
+  */
+  function randomDelay() {
+    $(".left-part").css("transition-delay", (Math.floor(Math.random() * 9) + 4) / 10 + "s");
+    for (var i = 1; i <= pages; i++) {if (window.CP.shouldStopExecution(0)) break;
+      $(".bg-part:nth-child(" + i + ")").css("transition-delay", (Math.floor(Math.random() * 9) + 4) / 10 + "s");
+    }window.CP.exitedLoop(0);
+  }
+
+  /* Async hell, with hardcoded numbers.
+  On production, 410 number must be .section-heading transform transition time in miliseconds + 10, but i'm sort of tired of this demo :D
+  */
+  function timeoutNav(t) {
+    var time = t || 2000;
+    $textStuff.addClass("not-visible");
+    setTimeout(function () {
+      navigating = false;
+      randomDelay();
+    }, time);
+    setTimeout(function () {
+      // cached selector not working because of newely created clone when moving up more then 2 positions
+      $(".section-heading, .additional-text").css({ "margin-top": 0 - (parseInt($(".nav-elem.active").attr("data-page")) - 1) * 100 + "vh" }).hide();
+    }, 410);
+    setTimeout(function () {
+      $textStuff.show();
+      $textStuff.css("top");
+      $textStuff.removeClass("not-visible");
+    }, time + 10);
+  }
+
+  function magicStuff(paramPage) {
+    if (paramPage) curPage = paramPage;
+    navigating = true;
+    var calculatedMargin = 0 - (curPage - 1) * 100;
+    $(".bg-part, .left-part").css("margin-top", calculatedMargin + "vh");
+    $(".scroll-down").addClass("removed");
+    if (parseInt($(".nav-elem.active").attr("data-page")) === 1) {
+      $(".scroll-down").removeClass("removed");
+    }
+  }
+
+  function trickyStuff(page) {
+    $(".left-part, .bg-part").css({ "transition-duration": "0s", "transition-delay": "0s" });
+    $(".main").css("top");
+    magicStuff(page);
+    $(".main").css("top");
+    $(".left-part, .bg-part").css("transition-duration", "0.8s");
+    randomDelay();
+  }
+
+  function pagination(pg) {
+    $(".nav-elem").removeClass("active");
+    $(".nav-" + pg).addClass("active");
+    curPage = pg;
+
+    if (pages >= 10) {
+      $paginationPage.text(pg);
+    } else {
+      $paginationPage.text("0" + pg);
+    }
+  }
+
+  function navigateUp() {
+    if (curPage > 1) {
+      curPage--;
+      pagination(curPage);
+      magicStuff();
+      timeoutNav();
+    }
+  }
+
+  function navigateDown() {
+    if (curPage < pages) {
+      curPage++;
+      pagination(curPage);
+      magicStuff();
+      timeoutNav();
+    }
+  }
+
+  $(document).on("mousewheel DOMMouseScroll", function (e) {
+    if (!navigating) {
+      if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+        navigateUp();
+      } else {
+        navigateDown();
+      }
+    }
+  });
+
+  $(document).on("mousewheel DOMMouseScroll",
+  ".sidebar-hover, .sidebar-real",
+  function (e) {
+    e.stopPropagation();
+  });
+
+  var sidebarScroll = 0,
+  $navEl = $(".nav-elem"),
+  $sidebar = $(".sidebar-real"),
+  maxScroll = $navEl.length * $navEl.height() - $(window).height();
+
+  $(document).on("mousewheel DOMMouseScroll", ".sidebar-real", function (e) {
+    if (navigating) return;
+    if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+      if (!sidebarScroll) return;
+      sidebarScroll += 100;
+      if (sidebarScroll > 0) sidebarScroll = 0;
+    } else {
+      if (Math.abs(sidebarScroll) === maxScroll) return;
+      sidebarScroll -= 100;
+      if (Math.abs(sidebarScroll) > maxScroll) sidebarScroll = 0 - maxScroll;
+    }
+    $sidebar.css("transform", "translateY(" + sidebarScroll + "px)");
+  });
+
+  $(document).on("click", ".nav-elem:not(.active)", function () {
+    if (navigating) return;
+    var activePage = parseInt($(".nav-elem.active").attr("data-page"), 10),
+    futurePage = $(this).attr("data-page");
+
+    pagination(futurePage);
+
+    if (Math.abs(activePage - futurePage) > 2) {
+      var $fakePage = $(".section-" + futurePage).clone(),
+      $currentPage = $(".section-" + activePage),
+      fakeNumber = 0;
+      // ugly code, do not enter here
+      if (activePage < futurePage) {
+        // moving down
+        $currentPage.after($fakePage);
+        fakeNumber = activePage + 1;
+        $(".main").css("top");
+        randomDelay();
+        magicStuff(fakeNumber);
+      } else {
+        // moving up (real hell)
+        $currentPage.before($fakePage);
+        fakeNumber = activePage - 1;
+        trickyStuff(activePage + 1);
+        $(".main").css("top");
+        randomDelay();
+        $(".main").css("top");
+        magicStuff(activePage);
+      }
+      timeoutNav(2050);
+      setTimeout(function () {
+        $fakePage.remove();
+        trickyStuff(futurePage);
+      }, 2000);
+    } else {
+      magicStuff(futurePage);
+      timeoutNav();
+    }
+  });
+
+  $(window).resize(function () {
+    maxScroll = $navEl.length * $navEl.height() - $(window).height();
+    $sidebar.css("transform", "translateY(0)");
+  });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
